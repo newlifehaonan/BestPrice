@@ -1,0 +1,11 @@
+# Xcode
+## Build generated
+build/
+DerivedData/
+
+## Various settings
+*.pbxuser
+xcuserdata/
+
+# Things I don't want to include
+Pods/

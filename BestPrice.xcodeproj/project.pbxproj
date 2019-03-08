@@ -14,6 +14,7 @@
 		A26D37A6223304A80028A6FF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A26D37A5223304A80028A6FF /* Assets.xcassets */; };
 		A26D37A9223304A80028A6FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A26D37A7223304A80028A6FF /* LaunchScreen.storyboard */; };
 		A26D37B1223308E90028A6FF /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = A26D37B0223308E90028A6FF /* README.md */; };
+		A26D37B322330D060028A6FF /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = A26D37B222330D060028A6FF /* .gitignore */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		A26D37A8223304A80028A6FF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A26D37AA223304A80028A6FF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A26D37B0223308E90028A6FF /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = SOURCE_ROOT; };
+		A26D37B222330D060028A6FF /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = SOURCE_ROOT; };
 		E95BF6AEC547A446A717EAF4 /* Pods_BestPrice.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BestPrice.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EC4F5C5A445AEAF125955320 /* Pods-BestPrice.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BestPrice.debug.xcconfig"; path = "Target Support Files/Pods-BestPrice/Pods-BestPrice.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -80,6 +82,7 @@
 		A26D379D223304A70028A6FF /* BestPrice */ = {
 			isa = PBXGroup;
 			children = (
+				A26D37B222330D060028A6FF /* .gitignore */,
 				A26D37B0223308E90028A6FF /* README.md */,
 				A26D379E223304A70028A6FF /* AppDelegate.swift */,
 				A26D37A0223304A70028A6FF /* ViewController.swift */,
@@ -151,6 +154,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A26D37B322330D060028A6FF /* .gitignore in Resources */,
 				A26D37A9223304A80028A6FF /* LaunchScreen.storyboard in Resources */,
 				A26D37A6223304A80028A6FF /* Assets.xcassets in Resources */,
 				A26D37B1223308E90028A6FF /* README.md in Resources */,
