@@ -1,0 +1,26 @@
+PODS:
+  - Alamofire (4.8.1)
+  - SwiftyJSON (4.2.0)
+  - WBLoadingIndicatorView (1.1.4):
+    - WBLoadingIndicatorView/WBAnimations (= 1.1.4)
+  - WBLoadingIndicatorView/WBAnimations (1.1.4)
+
+DEPENDENCIES:
+  - Alamofire
+  - SwiftyJSON
+  - WBLoadingIndicatorView
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - Alamofire
+    - SwiftyJSON
+    - WBLoadingIndicatorView
+
+SPEC CHECKSUMS:
+  Alamofire: 16ce2c353fb72865124ddae8a57c5942388f4f11
+  SwiftyJSON: c4bcba26dd9ec7a027fc8eade48e2c911f229e96
+  WBLoadingIndicatorView: b3847faf2f916c4aedf57067fc59eda205d05227
+
+PODFILE CHECKSUM: e45c899efa15f1ae38bb1a4e94188e69d6858459
+
+COCOAPODS: 1.6.1
