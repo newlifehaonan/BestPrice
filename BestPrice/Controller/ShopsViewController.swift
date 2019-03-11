@@ -9,14 +9,14 @@
 import UIKit
 
 class ShopsViewController: UIViewController {
-
-    
     @IBOutlet weak var ShopCardCollections: UICollectionView!
+    var effect: UIVisualEffect!
     let cellScaling: CGFloat = 0.6
     var merchandize: Merchandize?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         let screenSize = UIScreen.main.bounds.size
         let cellWidth = floor(screenSize.width * cellScaling)
         let cellHeight = floor(screenSize.height * cellScaling)
@@ -33,17 +33,9 @@ class ShopsViewController: UIViewController {
         ShopCardCollections?.delegate = self
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    override func viewWillDisappear(_ animated: Bool) {
+        merchandize = nil
     }
-    */
-
 }
 
 extension ShopsViewController: UICollectionViewDataSource, UICollectionViewDelegate {
@@ -66,6 +58,12 @@ extension ShopsViewController: UICollectionViewDataSource, UICollectionViewDeleg
             cell.ShopName.text = shop.name
             cell.itemPrice.text = "$\(shop.price)"
             
+            cell.controller = self
+            cell.popup = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ShopDetailPopUp") as? ItemDetailViewController
+            
+//            cell.viewDetail.addTarget(self, action: #selector(self.triggleDetailPopUp), for: .touchUpInside)
+//            cell.AddToFavorite.addTarget(self, action: #selector(self.addWishlist), for: .touchUpInside)
+            
             guard let numbOfImg = merchandize?.ImageURLs.count else { return cell}
             let ramdomizedIndex = Int.random(in: 0..<numbOfImg)
             guard let imgurl = merchandize?.ImageURLs[ramdomizedIndex] else { return cell}
@@ -75,6 +73,29 @@ extension ShopsViewController: UICollectionViewDataSource, UICollectionViewDeleg
         return cell
     }
     
+// I don't really need those, but might be useful in the future.
+//    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+//        self.currentcellIndex = indexPath
+//    }
+    
+//    @objc func triggleDetailPopUp(sender: UIButton) {
+//        let popup = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ShopDetailPopUp") as! ItemDetailViewController
+//
+//        popup.detail = merchandize
+//        let shopname = merchandize!.shops[currentcellIndex!.row].name
+//        let itemprice = merchandize!.shops[currentcellIndex!.row].price
+//        popup.shopName.text = shopname
+//        popup.itemPrice.text = "$\(itemprice)"
+//
+//
+//        self.addChild(popup)
+//        popup.view.frame = self.view.frame
+//        self.view.addSubview(popup.view)
+//        popup.didMove(toParent: self)
+//    }
+//    @objc func addWishlist() {
+//        print("item added")
+//    }
 }
 
 extension ShopsViewController: UIScrollViewDelegate {

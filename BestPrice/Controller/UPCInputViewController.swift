@@ -31,6 +31,9 @@ class UPCInputViewController: UIViewController {
 
         // Do any additional setup after loading the view.
     }
+    override func viewDidDisappear(_ animated: Bool) {
+        good = Merchandize()
+    }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "Getmerchandizelist" {
@@ -76,11 +79,20 @@ class UPCInputViewController: UIViewController {
                 case .success:
                     print("Success! Got the item data")
                     let ItemJSON: JSON  = JSON(response.result.value!)
+                    print(ItemJSON)
                     DispatchQueue.main.async() {
                         print("start parsing data from JSON to my local variable")
-                        completion(true, ItemJSON, nil)
-                        indicator.wb_hideLoadingView(true)
-                        self.performSegue(withIdentifier: "Getmerchandizelist", sender:self.searchByType)
+                        if ItemJSON["code"] == "INVALID_UPC" {
+                            indicator.wb_hideLoadingView(true)
+                            let alert = UIAlertController(title: "Sorry", message: "Invalid UPC Code", preferredStyle: .alert)
+                            alert.addAction(UIAlertAction(title: "Dismiss", style: .default))
+                            self.present(alert, animated: true, completion: nil)
+                        }
+                        else {
+                            completion(true, ItemJSON, nil)
+                            indicator.wb_hideLoadingView(true)
+                            self.performSegue(withIdentifier: "Getmerchandizelist", sender:self.searchByType)
+                        }
                     }
                 case .failure:
                     print("failure! return data failed")

@@ -21,15 +21,22 @@ class ShopCardCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var AddToFavorite: UIButton!
     
+    var popup: ItemDetailViewController?
+    var controller :ShopsViewController?
     
-    @IBAction func goToDetail(_ sender: Any) {
-        print("Detail shows")
+    @IBAction func viewDetai(_ sender: UIButton) {
+        popup?.shopName.text = ShopName.text
+        popup?.itemPrice.text = itemPrice.text
+        popup?.itemDescription.text = controller?.merchandize?.detail
+        popup?.itemName.text = controller?.merchandize?.name
+        
+        let caller = controller!
+        caller.addChild(popup!)
+        popup!.view.frame = caller.view.frame
+        caller.view.addSubview(popup!.view)
+        popup!.didMove(toParent: caller)
     }
-    
-    @IBAction func addToFavorite(_ sender: Any) {
-        print("adding To Favorite")
-    }
-    
+     
     func getData(url: URL, completion: @escaping (Data?, URLResponse?, Error?) -> ()) {
         URLSession.shared.dataTask(with: url, completionHandler: completion).resume()
     }
