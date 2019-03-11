@@ -9,4 +9,8 @@ target 'BestPrice' do
   pod 'SwiftyJSON'
   pod 'Alamofire'
   pod 'WBLoadingIndicatorView'
+  pod 'Firebase'
+  pod 'Firebase/Auth'
+  pod 'Firebase/Database'
+  pod 'FBSDKLoginKit'
 end
