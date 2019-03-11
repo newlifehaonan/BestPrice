@@ -28,7 +28,7 @@
 		A2FB40642236EA4A006E5746 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2FB405F2236EA4A006E5746 /* LoginViewController.swift */; };
 		A2FB40652236EA4A006E5746 /* UserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2FB40602236EA4A006E5746 /* UserViewController.swift */; };
 		A2FB40662236EA4A006E5746 /* InAppViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2FB40612236EA4A006E5746 /* InAppViewController.swift */; };
-		A2FB40682236EB87006E5746 /* JamesMain.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A2FB40672236EB87006E5746 /* JamesMain.storyboard */; };
+		A2FB406A2236EDD2006E5746 /* shop1029.mov in Resources */ = {isa = PBXBuildFile; fileRef = A2FB40692236EDD2006E5746 /* shop1029.mov */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,7 +56,7 @@
 		A2FB405F2236EA4A006E5746 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		A2FB40602236EA4A006E5746 /* UserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserViewController.swift; sourceTree = "<group>"; };
 		A2FB40612236EA4A006E5746 /* InAppViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InAppViewController.swift; sourceTree = "<group>"; };
-		A2FB40672236EB87006E5746 /* JamesMain.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = JamesMain.storyboard; sourceTree = "<group>"; };
+		A2FB40692236EDD2006E5746 /* shop1029.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = shop1029.mov; sourceTree = "<group>"; };
 		E95BF6AEC547A446A717EAF4 /* Pods_BestPrice.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BestPrice.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EC4F5C5A445AEAF125955320 /* Pods-BestPrice.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BestPrice.debug.xcconfig"; path = "Target Support Files/Pods-BestPrice/Pods-BestPrice.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -121,6 +121,7 @@
 				A26D379E223304A70028A6FF /* AppDelegate.swift */,
 				A26D37AA223304A80028A6FF /* Info.plist */,
 				A2FB405B2236E9F0006E5746 /* GoogleService-Info.plist */,
+				A2FB40692236EDD2006E5746 /* shop1029.mov */,
 				A2AD81EC22339B9200C340EC /* Images.xcassets */,
 			);
 			path = BestPrice;
@@ -138,7 +139,6 @@
 		A2AD81EA2233217900C340EC /* View */ = {
 			isa = PBXGroup;
 			children = (
-				A2FB40672236EB87006E5746 /* JamesMain.storyboard */,
 				A26D37A2223304A70028A6FF /* Main.storyboard */,
 				A26D37A7223304A80028A6FF /* LaunchScreen.storyboard */,
 			);
@@ -232,11 +232,11 @@
 			files = (
 				A26D37B322330D060028A6FF /* .gitignore in Resources */,
 				A26D37A9223304A80028A6FF /* LaunchScreen.storyboard in Resources */,
+				A2FB406A2236EDD2006E5746 /* shop1029.mov in Resources */,
 				A26D37B1223308E90028A6FF /* README.md in Resources */,
 				A26D37A4223304A70028A6FF /* Main.storyboard in Resources */,
 				A2AD81ED22339B9200C340EC /* Images.xcassets in Resources */,
 				A2FB405C2236E9F0006E5746 /* GoogleService-Info.plist in Resources */,
-				A2FB40682236EB87006E5746 /* JamesMain.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
