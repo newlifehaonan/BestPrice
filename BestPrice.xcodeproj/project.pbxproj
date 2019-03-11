@@ -7,27 +7,56 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		700B439D409C4AA5183380EA /* Pods_BestPrice.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E95BF6AEC547A446A717EAF4 /* Pods_BestPrice.framework */; };
 		A26D379F223304A70028A6FF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A26D379E223304A70028A6FF /* AppDelegate.swift */; };
-		A26D37A1223304A70028A6FF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A26D37A0223304A70028A6FF /* ViewController.swift */; };
+		A26D37A1223304A70028A6FF /* FavoriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A26D37A0223304A70028A6FF /* FavoriteViewController.swift */; };
 		A26D37A4223304A70028A6FF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A26D37A2223304A70028A6FF /* Main.storyboard */; };
-		A26D37A6223304A80028A6FF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A26D37A5223304A80028A6FF /* Assets.xcassets */; };
 		A26D37A9223304A80028A6FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A26D37A7223304A80028A6FF /* LaunchScreen.storyboard */; };
 		A26D37B1223308E90028A6FF /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = A26D37B0223308E90028A6FF /* README.md */; };
 		A26D37B322330D060028A6FF /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = A26D37B222330D060028A6FF /* .gitignore */; };
+		A26D37B52233190B0028A6FF /* Pods_BestPrice.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A26D37B42233190B0028A6FF /* Pods_BestPrice.framework */; };
+		A2AD81ED22339B9200C340EC /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A2AD81EC22339B9200C340EC /* Images.xcassets */; };
+		A2AD81F12234449300C340EC /* ShopsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2AD81F02234449300C340EC /* ShopsViewController.swift */; };
+		A2AD81F3223444CD00C340EC /* Merchandize.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2AD81F2223444CD00C340EC /* Merchandize.swift */; };
+		A2AD81F5223444EE00C340EC /* Retailer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2AD81F4223444EE00C340EC /* Retailer.swift */; };
+		A2AD81F72234454800C340EC /* UPCInputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2AD81F62234454800C340EC /* UPCInputViewController.swift */; };
+		A2AD81F92234528600C340EC /* ShopCardCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2AD81F82234528600C340EC /* ShopCardCollectionViewCell.swift */; };
+		A2AD81FB223473C200C340EC /* ItemDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2AD81FA223473C200C340EC /* ItemDetailViewController.swift */; };
+		A2FB40592235B617006E5746 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2FB40582235B617006E5746 /* WebViewController.swift */; };
+		A2FB405C2236E9F0006E5746 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A2FB405B2236E9F0006E5746 /* GoogleService-Info.plist */; };
+		A2FB40622236EA4A006E5746 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2FB405D2236EA4A006E5746 /* RegisterViewController.swift */; };
+		A2FB40632236EA4A006E5746 /* FBSDKLoginButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2FB405E2236EA4A006E5746 /* FBSDKLoginButton.swift */; };
+		A2FB40642236EA4A006E5746 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2FB405F2236EA4A006E5746 /* LoginViewController.swift */; };
+		A2FB40652236EA4A006E5746 /* UserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2FB40602236EA4A006E5746 /* UserViewController.swift */; };
+		A2FB40662236EA4A006E5746 /* InAppViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2FB40612236EA4A006E5746 /* InAppViewController.swift */; };
+		A2FB406A2236EDD2006E5746 /* shop1029.mov in Resources */ = {isa = PBXBuildFile; fileRef = A2FB40692236EDD2006E5746 /* shop1029.mov */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		8503F7C36350375317634FBB /* Pods-BestPrice.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BestPrice.release.xcconfig"; path = "Target Support Files/Pods-BestPrice/Pods-BestPrice.release.xcconfig"; sourceTree = "<group>"; };
 		A26D379B223304A70028A6FF /* BestPrice.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BestPrice.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A26D379E223304A70028A6FF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		A26D37A0223304A70028A6FF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		A26D37A0223304A70028A6FF /* FavoriteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteViewController.swift; sourceTree = "<group>"; };
 		A26D37A3223304A70028A6FF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		A26D37A5223304A80028A6FF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A26D37A8223304A80028A6FF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A26D37AA223304A80028A6FF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A26D37B0223308E90028A6FF /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = SOURCE_ROOT; };
 		A26D37B222330D060028A6FF /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = SOURCE_ROOT; };
+		A26D37B42233190B0028A6FF /* Pods_BestPrice.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Pods_BestPrice.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A2AD81EC22339B9200C340EC /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		A2AD81F02234449300C340EC /* ShopsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopsViewController.swift; sourceTree = "<group>"; };
+		A2AD81F2223444CD00C340EC /* Merchandize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Merchandize.swift; sourceTree = "<group>"; };
+		A2AD81F4223444EE00C340EC /* Retailer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Retailer.swift; sourceTree = "<group>"; };
+		A2AD81F62234454800C340EC /* UPCInputViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UPCInputViewController.swift; sourceTree = "<group>"; };
+		A2AD81F82234528600C340EC /* ShopCardCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopCardCollectionViewCell.swift; sourceTree = "<group>"; };
+		A2AD81FA223473C200C340EC /* ItemDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemDetailViewController.swift; sourceTree = "<group>"; };
+		A2FB40582235B617006E5746 /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
+		A2FB405B2236E9F0006E5746 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		A2FB405D2236EA4A006E5746 /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		A2FB405E2236EA4A006E5746 /* FBSDKLoginButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FBSDKLoginButton.swift; sourceTree = "<group>"; };
+		A2FB405F2236EA4A006E5746 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		A2FB40602236EA4A006E5746 /* UserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserViewController.swift; sourceTree = "<group>"; };
+		A2FB40612236EA4A006E5746 /* InAppViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InAppViewController.swift; sourceTree = "<group>"; };
+		A2FB40692236EDD2006E5746 /* shop1029.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = shop1029.mov; sourceTree = "<group>"; };
 		E95BF6AEC547A446A717EAF4 /* Pods_BestPrice.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BestPrice.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EC4F5C5A445AEAF125955320 /* Pods-BestPrice.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BestPrice.debug.xcconfig"; path = "Target Support Files/Pods-BestPrice/Pods-BestPrice.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -37,7 +66,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				700B439D409C4AA5183380EA /* Pods_BestPrice.framework in Frameworks */,
+				A26D37B52233190B0028A6FF /* Pods_BestPrice.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -56,6 +85,7 @@
 		95B7EF8356E83B31A9ACEA20 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A26D37B42233190B0028A6FF /* Pods_BestPrice.framework */,
 				E95BF6AEC547A446A717EAF4 /* Pods_BestPrice.framework */,
 			);
 			name = Frameworks;
@@ -82,16 +112,62 @@
 		A26D379D223304A70028A6FF /* BestPrice */ = {
 			isa = PBXGroup;
 			children = (
+				A2FB405A2236E99B006E5746 /* JamesController */,
+				A2AD81EB2233219300C340EC /* Controller */,
+				A2AD81EA2233217900C340EC /* View */,
+				A2AD81E92233216B00C340EC /* Model */,
 				A26D37B222330D060028A6FF /* .gitignore */,
 				A26D37B0223308E90028A6FF /* README.md */,
 				A26D379E223304A70028A6FF /* AppDelegate.swift */,
-				A26D37A0223304A70028A6FF /* ViewController.swift */,
-				A26D37A2223304A70028A6FF /* Main.storyboard */,
-				A26D37A5223304A80028A6FF /* Assets.xcassets */,
-				A26D37A7223304A80028A6FF /* LaunchScreen.storyboard */,
 				A26D37AA223304A80028A6FF /* Info.plist */,
+				A2FB405B2236E9F0006E5746 /* GoogleService-Info.plist */,
+				A2FB40692236EDD2006E5746 /* shop1029.mov */,
+				A2AD81EC22339B9200C340EC /* Images.xcassets */,
 			);
 			path = BestPrice;
+			sourceTree = "<group>";
+		};
+		A2AD81E92233216B00C340EC /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				A2AD81F2223444CD00C340EC /* Merchandize.swift */,
+				A2AD81F4223444EE00C340EC /* Retailer.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		A2AD81EA2233217900C340EC /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A26D37A2223304A70028A6FF /* Main.storyboard */,
+				A26D37A7223304A80028A6FF /* LaunchScreen.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		A2AD81EB2233219300C340EC /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				A26D37A0223304A70028A6FF /* FavoriteViewController.swift */,
+				A2AD81F02234449300C340EC /* ShopsViewController.swift */,
+				A2AD81F62234454800C340EC /* UPCInputViewController.swift */,
+				A2AD81F82234528600C340EC /* ShopCardCollectionViewCell.swift */,
+				A2AD81FA223473C200C340EC /* ItemDetailViewController.swift */,
+				A2FB40582235B617006E5746 /* WebViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		A2FB405A2236E99B006E5746 /* JamesController */ = {
+			isa = PBXGroup;
+			children = (
+				A2FB405E2236EA4A006E5746 /* FBSDKLoginButton.swift */,
+				A2FB40612236EA4A006E5746 /* InAppViewController.swift */,
+				A2FB405F2236EA4A006E5746 /* LoginViewController.swift */,
+				A2FB405D2236EA4A006E5746 /* RegisterViewController.swift */,
+				A2FB40602236EA4A006E5746 /* UserViewController.swift */,
+			);
+			path = JamesController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -156,9 +232,11 @@
 			files = (
 				A26D37B322330D060028A6FF /* .gitignore in Resources */,
 				A26D37A9223304A80028A6FF /* LaunchScreen.storyboard in Resources */,
-				A26D37A6223304A80028A6FF /* Assets.xcassets in Resources */,
+				A2FB406A2236EDD2006E5746 /* shop1029.mov in Resources */,
 				A26D37B1223308E90028A6FF /* README.md in Resources */,
 				A26D37A4223304A70028A6FF /* Main.storyboard in Resources */,
+				A2AD81ED22339B9200C340EC /* Images.xcassets in Resources */,
+				A2FB405C2236E9F0006E5746 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -175,16 +253,30 @@
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-BestPrice/Pods-BestPrice-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/Bolts/Bolts.framework",
+				"${BUILT_PRODUCTS_DIR}/FBSDKCoreKit/FBSDKCoreKit.framework",
+				"${BUILT_PRODUCTS_DIR}/FBSDKLoginKit/FBSDKLoginKit.framework",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 				"${BUILT_PRODUCTS_DIR}/WBLoadingIndicatorView/WBLoadingIndicatorView.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Bolts.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKCoreKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKLoginKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/WBLoadingIndicatorView.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -220,7 +312,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A26D37A1223304A70028A6FF /* ViewController.swift in Sources */,
+				A2FB40642236EA4A006E5746 /* LoginViewController.swift in Sources */,
+				A2AD81F5223444EE00C340EC /* Retailer.swift in Sources */,
+				A2FB40652236EA4A006E5746 /* UserViewController.swift in Sources */,
+				A2FB40622236EA4A006E5746 /* RegisterViewController.swift in Sources */,
+				A2FB40592235B617006E5746 /* WebViewController.swift in Sources */,
+				A2FB40662236EA4A006E5746 /* InAppViewController.swift in Sources */,
+				A26D37A1223304A70028A6FF /* FavoriteViewController.swift in Sources */,
+				A2FB40632236EA4A006E5746 /* FBSDKLoginButton.swift in Sources */,
+				A2AD81FB223473C200C340EC /* ItemDetailViewController.swift in Sources */,
+				A2AD81F72234454800C340EC /* UPCInputViewController.swift in Sources */,
+				A2AD81F12234449300C340EC /* ShopsViewController.swift in Sources */,
+				A2AD81F92234528600C340EC /* ShopCardCollectionViewCell.swift in Sources */,
+				A2AD81F3223444CD00C340EC /* Merchandize.swift in Sources */,
 				A26D379F223304A70028A6FF /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -368,6 +472,7 @@
 			baseConfigurationReference = EC4F5C5A445AEAF125955320 /* Pods-BestPrice.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = MQ79U7S5FQ;
 				INFOPLIST_FILE = BestPrice/Info.plist;
@@ -388,6 +493,7 @@
 			baseConfigurationReference = 8503F7C36350375317634FBB /* Pods-BestPrice.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = MQ79U7S5FQ;
 				INFOPLIST_FILE = BestPrice/Info.plist;
