@@ -26,9 +26,11 @@ class UPCInputViewController: UIViewController {
     ]
     var good = Merchandize()
     
+    override func viewWillAppear(_ animated: Bool) {
+         self.tabBarController?.tabBar.isHidden = false
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Do any additional setup after loading the view.
     }
     override func viewDidDisappear(_ animated: Bool) {
