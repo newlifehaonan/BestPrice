@@ -7,16 +7,21 @@
 //
 
 import UIKit
+import Firebase
 
 class ShopsViewController: UIViewController {
     @IBOutlet weak var ShopCardCollections: UICollectionView!
     var effect: UIVisualEffect!
     let cellScaling: CGFloat = 0.6
     var merchandize: Merchandize?
+    var ref: DatabaseReference!
+    
     
     override func viewDidLoad() {
+        
         super.viewDidLoad()
         
+        ref = Database.database().reference()
         let screenSize = UIScreen.main.bounds.size
         let cellWidth = floor(screenSize.width * cellScaling)
         let cellHeight = floor(screenSize.height * cellScaling)

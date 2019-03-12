@@ -8,6 +8,7 @@
 
 import UIKit
 import SwiftyJSON
+import Firebase
 
 class ShopCardCollectionViewCell: UICollectionViewCell {
     
@@ -42,11 +43,26 @@ class ShopCardCollectionViewCell: UICollectionViewCell {
         // insert record to firebase under logged in users profile
         
         //MARK: retrive current user
-        
+        let userid = Auth.auth().currentUser!.uid
         //MARK: create a tree structure of this user and insert the following data; set the rule as well
         let dataToStoreInDatabase = controller?.merchandize
+        controller?.ref.child("users").child(userid).child("userFavorite").setValue(
+            ["name": dataToStoreInDatabase!.name,
+             "detail": dataToStoreInDatabase!.detail])
+        var array = [String:String]()
+        for (index, img) in (controller?.merchandize?.ImageURLs.enumerated())! {
+            array["img\(index)"] = img
+        }
+        controller?.ref.child("users/\(userid)/userFavorite/images").setValue(array)
         
         
+        for (index, retailer) in  (controller?.merchandize?.shops.enumerated())!{
+            var store = [String:String]()
+            store["name"] = retailer.name
+            store["url"] = retailer.URL
+            store["price"] = String(retailer.price)
+            controller?.ref.child("users/\(userid)/userFavorite/shops/shop\(index)").setValue(store)
+    }
     }
     
     func getData(url: URL, completion: @escaping (Data?, URLResponse?, Error?) -> ()) {
