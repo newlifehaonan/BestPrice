@@ -36,7 +36,19 @@ class ShopCardCollectionViewCell: UICollectionViewCell {
         caller.view.addSubview(popup!.view)
         popup!.didMove(toParent: caller)
     }
-     
+    
+    
+    @IBAction func addToFavorite(_ sender: Any) {
+        // insert record to firebase under logged in users profile
+        
+        //MARK: retrive current user
+        
+        //MARK: create a tree structure of this user and insert the following data; set the rule as well
+        let dataToStoreInDatabase = controller?.merchandize
+        
+        
+    }
+    
     func getData(url: URL, completion: @escaping (Data?, URLResponse?, Error?) -> ()) {
         URLSession.shared.dataTask(with: url, completionHandler: completion).resume()
     }
