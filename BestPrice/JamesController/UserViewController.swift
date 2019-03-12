@@ -19,8 +19,8 @@ class UserViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
- self.navigationController?.isNavigationBarHidden = true
+    
+        self.navigationController?.isNavigationBarHidden = true
      loginButton.layer.borderColor = UIColor.white.cgColor
        registerButton.layer.borderColor = UIColor.white.cgColor
 loadVideo()
@@ -30,6 +30,7 @@ loadVideo()
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+          tabBarController?.tabBar.isHidden = true
         loadVideo()
         // Hide the navigation bar on the this view controller
         self.navigationController?.setNavigationBarHidden(true, animated: animated)
