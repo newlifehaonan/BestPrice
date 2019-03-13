@@ -1,10 +1,6 @@
 //
 //  ShopCardCollectionViewCell.swift
 //  BestPrice
-//
-//  Created by Harry Chen on 3/9/19.
-//  Copyright © 2019 Harry Chen. All rights reserved.
-//
 
 import UIKit
 import SwiftyJSON
@@ -46,22 +42,22 @@ class ShopCardCollectionViewCell: UICollectionViewCell {
         let userid = Auth.auth().currentUser!.uid
         //MARK: create a tree structure of this user and insert the following data; set the rule as well
         let dataToStoreInDatabase = controller?.merchandize
-        controller?.ref.child("users").child(userid).child("userFavorite").setValue(
+        let new =  controller?.ref.child("users").child(userid).child("favorites").childByAutoId()
+        controller?.ref.child("users").child(userid).child("favorites")
+        new!.setValue(
             ["name": dataToStoreInDatabase!.name,
              "detail": dataToStoreInDatabase!.detail])
         var array = [String:String]()
         for (index, img) in (controller?.merchandize?.ImageURLs.enumerated())! {
             array["img\(index)"] = img
         }
-        controller?.ref.child("users/\(userid)/userFavorite/images").setValue(array)
-        
-        
+        new!.child("images").setValue(array)
         for (index, retailer) in  (controller?.merchandize?.shops.enumerated())!{
             var store = [String:String]()
             store["name"] = retailer.name
             store["url"] = retailer.URL
             store["price"] = String(retailer.price)
-            controller?.ref.child("users/\(userid)/userFavorite/shops/shop\(index)").setValue(store)
+            new!.child("shops/shop\(index)").setValue(store)
     }
     }
     
