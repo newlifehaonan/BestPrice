@@ -18,6 +18,8 @@ class ShopCardCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var AddToFavorite: UIButton!
     
+    var shopURL: String?
+    
     var popup: ItemDetailViewController?
     var controller :ShopsViewController?
     
@@ -26,6 +28,7 @@ class ShopCardCollectionViewCell: UICollectionViewCell {
         popup?.itemPrice.text = itemPrice.text
         popup?.itemDescription.text = controller?.merchandize?.detail
         popup?.itemName.text = controller?.merchandize?.name
+        popup?.shopURL = shopURL
         
         let caller = controller!
         caller.addChild(popup!)
@@ -36,7 +39,17 @@ class ShopCardCollectionViewCell: UICollectionViewCell {
     
     
     @IBAction func addToFavorite(_ sender: Any) {
-        // insert record to firebase under logged in users profile
+        
+        // config buttom UI
+        AddToFavorite.isSelected.toggle()
+        if AddToFavorite.state == .selected {
+            // added to wishlist in firebase
+            
+        }
+        else if AddToFavorite.state == .normal {
+            // remove from wishlist in firebase
+            
+        }
         
         //MARK: retrive current user
         let userid = Auth.auth().currentUser!.uid
@@ -58,7 +71,7 @@ class ShopCardCollectionViewCell: UICollectionViewCell {
             store["url"] = retailer.URL
             store["price"] = String(retailer.price)
             new!.child("shops/shop\(index)").setValue(store)
-    }
+        }
     }
     
     func getData(url: URL, completion: @escaping (Data?, URLResponse?, Error?) -> ()) {

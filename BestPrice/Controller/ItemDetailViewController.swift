@@ -9,8 +9,6 @@
 import UIKit
 
 class ItemDetailViewController: UIViewController {
-
-    var shopURL: String?
     @IBOutlet weak var cancle: UIButton!
     @IBOutlet var itemdetail: UIView!
     @IBOutlet weak var blurView: UIVisualEffectView!
@@ -20,6 +18,7 @@ class ItemDetailViewController: UIViewController {
     @IBOutlet weak var shopName: UILabel!
     @IBOutlet weak var shippingPrice: UILabel!
     @IBOutlet weak var itemCondition: UILabel!
+    var shopURL: String?
     var effect: UIVisualEffect!
     
     override func viewDidLoad() {
@@ -62,17 +61,21 @@ class ItemDetailViewController: UIViewController {
     }
     
     
-    @IBAction func toShopWebView(_ sender: Any) {
-        print("web view shows")
+    @IBAction func toShopWebView(_ sender: UIButton) {
+        performSegue(withIdentifier: "showWebView", sender: sender)
     }
-    /*
+    
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        if segue.identifier == "showWebView" {
+            let destinationVC = segue.destination as! WebViewController
+            //            destinationVC.delegate = self
+            destinationVC.shopURL = self.shopURL
+        }
     }
-    */
+ 
 
 }

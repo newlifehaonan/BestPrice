@@ -14,7 +14,8 @@ class FavoriteViewController: UIViewController {
     @IBOutlet weak var favoriteList: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
-             self.tabBarController?.tabBar.isHidden = false
+        self.tabBarController?.tabBar.isHidden = false
+        self.navigationController?.isNavigationBarHidden = true
         // Do any additional setup after loading the view.
         favoriteList.dataSource = self
         favoriteList.delegate = self
