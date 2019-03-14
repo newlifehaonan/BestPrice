@@ -36,9 +36,6 @@ class ShopCardCollectionViewCell: UICollectionViewCell {
     
     
     @IBAction func addToFavorite(_ sender: Any) {
-        // insert record to firebase under logged in users profile
-        
-        //MARK: retrive current user
         let userid = Auth.auth().currentUser!.uid
         //MARK: create a tree structure of this user and insert the following data; set the rule as well
         let dataToStoreInDatabase = controller?.merchandize
@@ -58,7 +55,7 @@ class ShopCardCollectionViewCell: UICollectionViewCell {
             store["url"] = retailer.URL
             store["price"] = String(retailer.price)
             new!.child("shops/shop\(index)").setValue(store)
-    }
+        }
     }
     
     func getData(url: URL, completion: @escaping (Data?, URLResponse?, Error?) -> ()) {

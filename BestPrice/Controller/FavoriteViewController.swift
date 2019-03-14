@@ -7,13 +7,29 @@
 //
 
 import UIKit
+import Firebase
 
 class FavoriteViewController: UIViewController {
+    var downloadedDetail : String!
+    var downloadedImages : Array <String>!
+    var downloadedName : Array<String>!
+    var downloadedShops : Array <Retailer>!
+    
+
+    var downloadedIngredients : [Dictionary <String, String>]!
+
+    var ref: DatabaseReference!
+    var databaseHandle: DatabaseHandle?
 
     var userFavoriteItems = [Merchandize]()
     @IBOutlet weak var favoriteList: UITableView!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        ref = Database.database().reference()
+        getFavorite()
              self.tabBarController?.tabBar.isHidden = false
         // Do any additional setup after loading the view.
         favoriteList.dataSource = self
@@ -27,6 +43,35 @@ class FavoriteViewController: UIViewController {
     
     //MARK: this function contains logic to handle the HTTP return
     func getFavorite() {
+       
+       
+            let userID = Auth.auth().currentUser?.uid
+        
+                print("UserID", userID!)
+        
+        ref.child("users").child(userID!).observeSingleEvent(of: .value, with: { (snapshot) in
+            let favorites = snapshot.childSnapshot(forPath: "favorites")
+            for favorite in favorites.children{
+                let snap =  favorite as! DataSnapshot
+                let dict = snap.value as! [String: Any]
+                let  name = dict["name"] as! String
+                let  detail = dict["detail"] as! String
+                let  images = dict["images"] as! NSDictionary
+                let shops = dict["shops"] as! NSDictionary
+                for shop in shops {
+                    let dict = shop.value as! [String: Any]
+                     let  name = dict["name"] as! String
+                    let  price = dict["price"] as! String
+                    let  url = dict["url"] as! String
+                   
+                }
+            
+            }
+             }) { (error) in
+            print(error.localizedDescription)
+        }
+    
+       
         
         // assign userFavoriteItems array
         DispatchQueue.global().async {
@@ -34,7 +79,6 @@ class FavoriteViewController: UIViewController {
         
         }
     }
-
 }
 
 extension FavoriteViewController: UITableViewDataSource, UITableViewDelegate {

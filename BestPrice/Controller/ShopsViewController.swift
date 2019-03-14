@@ -15,12 +15,12 @@ class ShopsViewController: UIViewController {
     let cellScaling: CGFloat = 0.6
     var merchandize: Merchandize?
     var ref: DatabaseReference!
-    
+    var databaseHandle: DatabaseHandle?
+      
     
     override func viewDidLoad() {
         
         super.viewDidLoad()
-        
         ref = Database.database().reference()
         let screenSize = UIScreen.main.bounds.size
         let cellWidth = floor(screenSize.width * cellScaling)
@@ -42,6 +42,7 @@ class ShopsViewController: UIViewController {
         merchandize = nil
     }
 }
+
 
 extension ShopsViewController: UICollectionViewDataSource, UICollectionViewDelegate {
     func numberOfSections(in collectionView: UICollectionView) -> Int {
