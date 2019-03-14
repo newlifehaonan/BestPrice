@@ -1,13 +1,10 @@
 //
 //  ShopCardCollectionViewCell.swift
 //  BestPrice
-//
-//  Created by Harry Chen on 3/9/19.
-//  Copyright © 2019 Harry Chen. All rights reserved.
-//
 
 import UIKit
 import SwiftyJSON
+import Firebase
 
 class ShopCardCollectionViewCell: UICollectionViewCell {
     
@@ -21,6 +18,8 @@ class ShopCardCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var AddToFavorite: UIButton!
     
+    var shopURL: String?
+    
     var popup: ItemDetailViewController?
     var controller :ShopsViewController?
     
@@ -29,6 +28,7 @@ class ShopCardCollectionViewCell: UICollectionViewCell {
         popup?.itemPrice.text = itemPrice.text
         popup?.itemDescription.text = controller?.merchandize?.detail
         popup?.itemName.text = controller?.merchandize?.name
+        popup?.shopURL = shopURL
         
         let caller = controller!
         caller.addChild(popup!)
@@ -39,14 +39,41 @@ class ShopCardCollectionViewCell: UICollectionViewCell {
     
     
     @IBAction func addToFavorite(_ sender: Any) {
-        // insert record to firebase under logged in users profile
+
+        
+        // config buttom UI
+        AddToFavorite.isSelected.toggle()
+        if AddToFavorite.state == .selected {
+            // added to wishlist in firebase
+            
+        }
+        else if AddToFavorite.state == .normal {
+            // remove from wishlist in firebase
+            
+        }
         
         //MARK: retrive current user
-        
+
+        let userid = Auth.auth().currentUser!.uid
         //MARK: create a tree structure of this user and insert the following data; set the rule as well
         let dataToStoreInDatabase = controller?.merchandize
-        
-        
+        let new =  controller?.ref.child("users").child(userid).child("favorites").childByAutoId()
+        controller?.ref.child("users").child(userid).child("favorites")
+        new!.setValue(
+            ["name": dataToStoreInDatabase!.name,
+             "detail": dataToStoreInDatabase!.detail])
+        var array = [String:String]()
+        for (index, img) in (controller?.merchandize?.ImageURLs.enumerated())! {
+            array["img\(index)"] = img
+        }
+        new!.child("images").setValue(array)
+        for (index, retailer) in  (controller?.merchandize?.shops.enumerated())!{
+            var store = [String:String]()
+            store["name"] = retailer.name
+            store["url"] = retailer.URL
+            store["price"] = String(retailer.price)
+            new!.child("shops/shop\(index)").setValue(store)
+        }
     }
     
     func getData(url: URL, completion: @escaping (Data?, URLResponse?, Error?) -> ()) {
