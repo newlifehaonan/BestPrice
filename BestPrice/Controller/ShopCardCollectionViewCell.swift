@@ -18,6 +18,8 @@ class ShopCardCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var AddToFavorite: UIButton!
     
+    var shopURL: String?
+    
     var popup: ItemDetailViewController?
     var controller :ShopsViewController?
     
@@ -26,6 +28,7 @@ class ShopCardCollectionViewCell: UICollectionViewCell {
         popup?.itemPrice.text = itemPrice.text
         popup?.itemDescription.text = controller?.merchandize?.detail
         popup?.itemName.text = controller?.merchandize?.name
+        popup?.shopURL = shopURL
         
         let caller = controller!
         caller.addChild(popup!)
@@ -36,6 +39,21 @@ class ShopCardCollectionViewCell: UICollectionViewCell {
     
     
     @IBAction func addToFavorite(_ sender: Any) {
+
+        
+        // config buttom UI
+        AddToFavorite.isSelected.toggle()
+        if AddToFavorite.state == .selected {
+            // added to wishlist in firebase
+            
+        }
+        else if AddToFavorite.state == .normal {
+            // remove from wishlist in firebase
+            
+        }
+        
+        //MARK: retrive current user
+
         let userid = Auth.auth().currentUser!.uid
         //MARK: create a tree structure of this user and insert the following data; set the rule as well
         let dataToStoreInDatabase = controller?.merchandize

@@ -28,9 +28,11 @@ class FavoriteViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+
         ref = Database.database().reference()
         getFavorite()
              self.tabBarController?.tabBar.isHidden = false
+
         // Do any additional setup after loading the view.
         favoriteList.dataSource = self
         favoriteList.delegate = self
