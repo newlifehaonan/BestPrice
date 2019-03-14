@@ -2,7 +2,7 @@
 //  UPCInputViewController.swift
 //  BestPrice
 //
-//  Created by Harry Chen on 3/9/19.
+//  Created by Harry Chen and William Schroeder on 3/9/19.
 //  Copyright © 2019 Harry Chen. All rights reserved.
 //
 
@@ -41,7 +41,7 @@ class UPCInputViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "Getmerchandizelist" {
             let destinationVC = segue.destination as! ShopsViewController
-            //            destinationVC.delegate = self
+            //destinationVC.delegate = self
             destinationVC.merchandize = good
         }
     }
@@ -56,11 +56,11 @@ class UPCInputViewController: UIViewController {
         }
     }
     
-    //MARK: - NetWorking
+    // MARK: - NetWorking
     func getItem(url: String, params:[String: String], completion: @escaping (Bool, JSON?, Error?) -> Void){
         print("now getting data from server!")
         
-        //MARK: Using WBLoadingView
+        // MARK: Using WBLoadingView
         let indicator = WBLoadingIndicatorView(view: self.view)!
         indicator.type = WBLoadingAnimationType.animationBallSurround
         indicator.indicatorSize = CGSize(width: 50, height: 50)
@@ -154,4 +154,7 @@ class UPCInputViewController: UIViewController {
         }
     }
 
+    // MARK: 
+    @IBAction func unwindToUPCInput(segue: UIStoryboardSegue) {
+    }
 }
