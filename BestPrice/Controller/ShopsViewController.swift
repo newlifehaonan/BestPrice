@@ -19,13 +19,16 @@ class ShopsViewController: UIViewController {
     let cellScaling: CGFloat = 0.6
     var merchandize: Merchandize?
     var ref: DatabaseReference!
-    
+    var databaseHandle: DatabaseHandle?
+      
     
     override func viewDidLoad() {
         
         super.viewDidLoad()
+
         
         // create a reference of database connection for collection cell to use
+
         ref = Database.database().reference()
         
         // config layout of collection cell
@@ -48,6 +51,7 @@ class ShopsViewController: UIViewController {
         merchandize = nil
     }
 }
+
 
 extension ShopsViewController: UICollectionViewDataSource, UICollectionViewDelegate {
     func numberOfSections(in collectionView: UICollectionView) -> Int {
