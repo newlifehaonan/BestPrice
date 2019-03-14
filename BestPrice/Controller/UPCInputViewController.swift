@@ -40,9 +40,14 @@ class UPCInputViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "Getmerchandizelist" {
             let destinationVC = segue.destination as! ShopsViewController
-            //            destinationVC.delegate = self
+            //destinationVC.delegate = self
             destinationVC.merchandize = good
         }
+    }
+    
+    // MARK: Open the camera
+    @IBAction func openCameraButton(_ sender: UIButton) {
+        
     }
     
     // MARK: RESTFUL Call
@@ -55,11 +60,11 @@ class UPCInputViewController: UIViewController {
         }
     }
     
-    //MARK: - NetWorking
+    // MARK: - NetWorking
     func getItem(url: String, params:[String: String], completion: @escaping (Bool, JSON?, Error?) -> Void){
         print("now getting data from server!")
         
-        //MARK: Using WBLoadingView
+        // MARK: Using WBLoadingView
         let indicator = WBLoadingIndicatorView(view: self.view)!
         indicator.type = WBLoadingAnimationType.animationBallSurround
         indicator.indicatorSize = CGSize(width: 50, height: 50)
