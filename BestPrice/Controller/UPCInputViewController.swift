@@ -2,7 +2,7 @@
 //  UPCInputViewController.swift
 //  BestPrice
 //
-//  Created by Harry Chen on 3/9/19.
+//  Created by Harry Chen and William Schroeder on 3/9/19.
 //  Copyright © 2019 Harry Chen. All rights reserved.
 //
 
@@ -44,11 +44,6 @@ class UPCInputViewController: UIViewController {
             //destinationVC.delegate = self
             destinationVC.merchandize = good
         }
-    }
-    
-    // MARK: Open the camera
-    @IBAction func openCameraButton(_ sender: UIButton) {
-        
     }
     
     // MARK: RESTFUL Call
@@ -150,4 +145,7 @@ class UPCInputViewController: UIViewController {
         }
     }
 
+    // MARK: 
+    @IBAction func unwindToUPCInput(segue: UIStoryboardSegue) {
+    }
 }
