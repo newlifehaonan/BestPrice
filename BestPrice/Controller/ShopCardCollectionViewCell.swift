@@ -41,10 +41,12 @@ class ShopCardCollectionViewCell: UICollectionViewCell {
         
         // config buttom UI
         AddToFavorite.isSelected.toggle()
-        if AddToFavorite.state == .selected {
-            // added to wishlist in firebase
-            
-        } else if AddToFavorite.state == .normal {
+//        if AddToFavorite.state == .selected {
+//            // added to wishlist in firebase
+//
+//        } else if AddToFavorite.state == .normal {
+//        }
+        
         let userid = Auth.auth().currentUser!.uid
         //MARK: create a tree structure of this user and insert the following data; set the rule as well
         let dataToStoreInDatabase = controller?.merchandize
@@ -114,4 +116,3 @@ class ShopCardCollectionViewCell: UICollectionViewCell {
         self.clipsToBounds = false
     }
 }
-
