@@ -39,6 +39,7 @@ class ShopCardCollectionViewCell: UICollectionViewCell {
     
     
     @IBAction func addToFavorite(_ sender: Any) {
+
         
         // config buttom UI
         AddToFavorite.isSelected.toggle()
@@ -52,6 +53,7 @@ class ShopCardCollectionViewCell: UICollectionViewCell {
         }
         
         //MARK: retrive current user
+
         let userid = Auth.auth().currentUser!.uid
         //MARK: create a tree structure of this user and insert the following data; set the rule as well
         let dataToStoreInDatabase = controller?.merchandize
