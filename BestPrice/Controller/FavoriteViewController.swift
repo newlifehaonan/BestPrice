@@ -3,8 +3,8 @@ import Firebase
 
 class FavoriteViewController: UIViewController {
     
-    var items: Array<Merchandize>!
-    var retailer: Array<Retailer>!
+    var items = [Merchandize]()
+    var retailer = [Retailer]()
     var faveName: String = ""
     var faveDetail: String = ""
     var faveImages: NSDictionary = [:]
@@ -51,6 +51,7 @@ class FavoriteViewController: UIViewController {
             for favorite in favorites.children {
                 let snap = favorite as! DataSnapshot
                 let dict = snap.value as! [String: Any]
+                
                 self.faveName = dict["name"] as! String
                 self.faveDetail = dict["detail"] as! String
                 self.faveImages = dict["images"] as! NSDictionary
@@ -114,7 +115,5 @@ extension FavoriteViewController: UITableViewDataSource, UITableViewDelegate {
         let cell = tableView.dequeueReusableCell(withIdentifier: "favoriteCell", for: indexPath) as! UITableViewCell
         return cell
     }
-    
-    
 }
 
