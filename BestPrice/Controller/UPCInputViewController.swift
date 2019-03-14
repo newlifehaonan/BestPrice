@@ -90,11 +90,20 @@ class UPCInputViewController: UIViewController {
                             let alert = UIAlertController(title: "Sorry", message: "Invalid UPC Code", preferredStyle: .alert)
                             alert.addAction(UIAlertAction(title: "Dismiss", style: .default))
                             self.present(alert, animated: true, completion: nil)
+                            indicator.wb_hideLoadingView(true)
                         }
                         else {
-                            completion(true, ItemJSON, nil)
-                            indicator.wb_hideLoadingView(true)
-                            self.performSegue(withIdentifier: "Getmerchandizelist", sender:self.searchByType)
+                            if ItemJSON["items"].count == 0 {
+                                let alert = UIAlertController(title: "Sorry", message: "No Item Available", preferredStyle: .alert)
+                                alert.addAction(UIAlertAction(title: "Dismiss", style: .default))
+                                self.present(alert, animated: true, completion: nil)
+                                indicator.wb_hideLoadingView(true)
+                            }
+                            else {
+                                completion(true, ItemJSON, nil)
+                                indicator.wb_hideLoadingView(true)
+                                self.performSegue(withIdentifier: "Getmerchandizelist", sender:self.searchByType)
+                            }
                         }
                     }
                 case .failure:
