@@ -1,6 +1,4 @@
-//
 //  ShopCardCollectionViewCell.swift
-//  BestPrice
 
 import UIKit
 import SwiftyJSON
@@ -21,7 +19,7 @@ class ShopCardCollectionViewCell: UICollectionViewCell {
     var shopURL: String?
     
     var popup: ItemDetailViewController?
-    var controller :ShopsViewController?
+    var controller: ShopsViewController?
     
     @IBAction func viewDetai(_ sender: UIButton) {
         popup?.shopName.text = ShopName.text
@@ -39,36 +37,31 @@ class ShopCardCollectionViewCell: UICollectionViewCell {
     
     
     @IBAction func addToFavorite(_ sender: Any) {
-
+        
         
         // config buttom UI
         AddToFavorite.isSelected.toggle()
-        if AddToFavorite.state == .selected {
-            // added to wishlist in firebase
-            
-        }
-        else if AddToFavorite.state == .normal {
-            // remove from wishlist in firebase
-            
-        }
+//        if AddToFavorite.state == .selected {
+//            // added to wishlist in firebase
+//
+//        } else if AddToFavorite.state == .normal {
+//        }
         
-        //MARK: retrive current user
-
         let userid = Auth.auth().currentUser!.uid
         //MARK: create a tree structure of this user and insert the following data; set the rule as well
         let dataToStoreInDatabase = controller?.merchandize
-        let new =  controller?.ref.child("users").child(userid).child("favorites").childByAutoId()
+        let new = controller?.ref.child("users").child(userid).child("favorites").childByAutoId()
         controller?.ref.child("users").child(userid).child("favorites")
         new!.setValue(
             ["name": dataToStoreInDatabase!.name,
              "detail": dataToStoreInDatabase!.detail])
-        var array = [String:String]()
+        var array = [String: String]()
         for (index, img) in (controller?.merchandize?.ImageURLs.enumerated())! {
             array["img\(index)"] = img
         }
         new!.child("images").setValue(array)
-        for (index, retailer) in  (controller?.merchandize?.shops.enumerated())!{
-            var store = [String:String]()
+        for (index, retailer) in (controller?.merchandize?.shops.enumerated())! {
+            var store = [String: String]()
             store["name"] = retailer.name
             store["url"] = retailer.URL
             store["price"] = String(retailer.price)
@@ -91,7 +84,9 @@ class ShopCardCollectionViewCell: UICollectionViewCell {
         indicator.sizeToFit()
         indicator.startAnimating()
         DispatchQueue.global().asyncAfter(deadline: .now() + 0.5) {
-            guard let Url = URL(string: url) else {return}
+            guard let Url = URL(string: url) else {
+                return
+            }
             self.getData(url: Url) { (data, response, error) in
                 if let data = data, error == nil {
                     print(response?.suggestedFilename ?? Url.lastPathComponent)
@@ -100,8 +95,7 @@ class ShopCardCollectionViewCell: UICollectionViewCell {
                         self.productImg.image = UIImage(data: data)
                         indicator.stopAnimating()
                     }
-                }
-                else {
+                } else {
                     DispatchQueue.main.async() {
                         print("Download Failed")
                         indicator.stopAnimating()
@@ -110,6 +104,7 @@ class ShopCardCollectionViewCell: UICollectionViewCell {
             }
         }
     }
+    
     override func layoutSubviews() {
         super.layoutSubviews()
         

@@ -1,38 +1,33 @@
-//
-//  ViewController.swift
-//  BestPrice
-//
-//  Created by Harry Chen on 3/8/19.
-//  Copyright © 2019 Harry Chen. All rights reserved.
-//
-
 import UIKit
 import Firebase
 
 class FavoriteViewController: UIViewController {
-    var downloadedDetail : String!
-    var downloadedImages : Array <String>!
-    var downloadedName : Array<String>!
-    var downloadedShops : Array <Retailer>!
     
-
-    var downloadedIngredients : [Dictionary <String, String>]!
-
+    var items = [Merchandize]()
+    var retailer = [Retailer]()
+    var faveName: String = ""
+    var faveDetail: String = ""
+    var faveImages: NSDictionary = [:]
+    var shopName: String = ""
+    var price: String = ""
+    var url: String = ""
+    var retailerObj: Retailer?
+    var imageArray = [String]()    
     var ref: DatabaseReference!
     var databaseHandle: DatabaseHandle?
-
+    
     var userFavoriteItems = [Merchandize]()
     @IBOutlet weak var favoriteList: UITableView!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-
+        
+        
         ref = Database.database().reference()
         getFavorite()
-             self.tabBarController?.tabBar.isHidden = false
-
+        self.tabBarController?.tabBar.isHidden = false
+        
         // Do any additional setup after loading the view.
         favoriteList.dataSource = self
         favoriteList.delegate = self
@@ -45,40 +40,64 @@ class FavoriteViewController: UIViewController {
     
     //MARK: this function contains logic to handle the HTTP return
     func getFavorite() {
-       
-       
-            let userID = Auth.auth().currentUser?.uid
         
-                print("UserID", userID!)
+        
+        let userID = Auth.auth().currentUser?.uid
+        
+        print("UserID", userID!)
         
         ref.child("users").child(userID!).observeSingleEvent(of: .value, with: { (snapshot) in
             let favorites = snapshot.childSnapshot(forPath: "favorites")
-            for favorite in favorites.children{
-                let snap =  favorite as! DataSnapshot
+            for favorite in favorites.children {
+                let snap = favorite as! DataSnapshot
                 let dict = snap.value as! [String: Any]
-                let  name = dict["name"] as! String
-                let  detail = dict["detail"] as! String
-                let  images = dict["images"] as! NSDictionary
+                
+                self.faveName = dict["name"] as! String
+                self.faveDetail = dict["detail"] as! String
+                self.faveImages = dict["images"] as! NSDictionary
+                
                 let shops = dict["shops"] as! NSDictionary
                 for shop in shops {
                     let dict = shop.value as! [String: Any]
-                     let  name = dict["name"] as! String
-                    let  price = dict["price"] as! String
-                    let  url = dict["url"] as! String
-                   
+                    self.shopName = dict["name"] as! String
+                    self.price = dict["price"] as! String
+                    self.url = dict["url"] as! String
+                    
+                    
+                    self.retailerObj = Retailer(name: self.shopName, URL: self.url, price: Double(self.price)!)
+                    
+                    if let check = self.retailerObj {
+                        
+                        self.retailer.append(check)
+                    } else {
+                        
+                    }
+                    
+                    
+                    for value in self.faveImages.allValues {
+                        
+                        if let newImgVal = value as? String {
+                            self.imageArray.append(newImgVal)
+                            
+                            
+                        }
+                        self.items.append(Merchandize(name: self.faveName, detail: self.faveDetail, images: self.imageArray, shops: self.retailer)
+                        )
+                        
+                        
+                    }
                 }
-            
             }
-             }) { (error) in
+            
+        }) { (error) in
             print(error.localizedDescription)
         }
-    
-       
+        
         
         // assign userFavoriteItems array
         DispatchQueue.global().async {
             
-        
+            
         }
     }
 }
@@ -96,6 +115,5 @@ extension FavoriteViewController: UITableViewDataSource, UITableViewDelegate {
         let cell = tableView.dequeueReusableCell(withIdentifier: "favoriteCell", for: indexPath) as! UITableViewCell
         return cell
     }
-    
-    
 }
+
