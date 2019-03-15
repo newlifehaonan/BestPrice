@@ -28,7 +28,6 @@ class ShopsViewController: UIViewController {
 
         
         // create a reference of database connection for collection cell to use
-
         ref = Database.database().reference()
         
         // config layout of collection cell
@@ -69,7 +68,6 @@ extension ShopsViewController: UICollectionViewDataSource, UICollectionViewDeleg
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Merchant", for: indexPath) as! ShopCardCollectionViewCell
-        
         //MARK: change Image
         cell.AddToFavorite.setImage(UIImage(named: "likewhite"), for: .normal)
         cell.AddToFavorite.setImage(UIImage(named: "heartred"), for: .selected)

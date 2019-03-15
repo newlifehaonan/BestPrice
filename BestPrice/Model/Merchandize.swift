@@ -21,7 +21,6 @@ class Merchandize: NSObject {
     self.detail = detail
     self.ImageURLs = images
     self.shops = shops
-    
     }
     override init(){
     

@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="afX-GE-PhS">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.64" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="afX-GE-PhS">
     <device id="retina6_1" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.47"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -161,7 +161,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ggt-jB-vwo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2657" y="759"/>
+            <point key="canvasLocation" x="-3200" y="759"/>
         </scene>
         <!--Camera Scanner View Controller-->
         <scene sceneID="cgI-rS-f41">
@@ -198,7 +198,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Ctg-8x-A6V">
-                                <rect key="frame" x="138" y="78" width="138.5" height="106"/>
+                                <rect key="frame" x="138" y="122" width="138.5" height="106"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BEST PRICE " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Yf-SR-KlU">
                                         <rect key="frame" x="0.0" y="0.0" width="138.5" height="30"/>
@@ -221,7 +221,7 @@
                                 </subviews>
                             </stackView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="vbx-d6-IOU">
-                                <rect key="frame" x="0.0" y="204" width="414" height="589"/>
+                                <rect key="frame" x="0.0" y="248" width="414" height="545"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="uFX-xV-pX3">
                                     <size key="itemSize" width="200" height="400"/>
@@ -231,7 +231,7 @@
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Merchant" id="uPP-Xm-rB5" customClass="ShopCardCollectionViewCell" customModule="BestPrice" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="94.5" width="200" height="400"/>
+                                        <rect key="frame" x="0.0" y="72.5" width="200" height="400"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
                                             <rect key="frame" x="0.0" y="0.0" width="200" height="400"/>
@@ -335,7 +335,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bir-lZ-dYc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1259" y="1557"/>
+            <point key="canvasLocation" x="-1014" y="1557"/>
         </scene>
         <!--Item Detail View Controller-->
         <scene sceneID="NKP-sR-tib">
@@ -543,7 +543,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jec-rT-gP0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1013" y="2176"/>
+            <point key="canvasLocation" x="1013" y="2087"/>
         </scene>
         <!--Account View Controller-->
         <scene sceneID="hfA-Cp-u1B">
@@ -862,7 +862,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1NI-pE-UZp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1014" y="-291"/>
+            <point key="canvasLocation" x="1012" y="-291"/>
         </scene>
         <!--more-->
         <scene sceneID="Pb3-Ta-nKc">
@@ -903,7 +903,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OKg-Oo-teq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1652" y="-290"/>
+            <point key="canvasLocation" x="-1652" y="-291"/>
         </scene>
         <!--Favorite-->
         <scene sceneID="tne-QT-ifu">
@@ -917,13 +917,61 @@
                                 <rect key="frame" x="0.0" y="88" width="414" height="725"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="favoriteCell" id="vD7-B0-P1n">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="44"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="favoriteItem" rowHeight="230" id="Uue-TG-0Oh" customClass="FavoriteTableViewCell" customModule="BestPrice" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="230"/>
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="vD7-B0-P1n" id="K2u-f5-amI">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Uue-TG-0Oh" id="Gfu-El-zsX">
+                                            <rect key="frame" x="0.0" y="0.0" width="376" height="229.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="22" translatesAutoresizingMaskIntoConstraints="NO" id="uE9-jY-tgh">
+                                                    <rect key="frame" x="20" y="27" width="356" height="176"/>
+                                                    <subviews>
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Ran-Kb-QoD">
+                                                            <rect key="frame" x="0.0" y="0.0" width="167" height="176"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="176" id="s3U-d7-XeY"/>
+                                                            </constraints>
+                                                        </imageView>
+                                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="top" spacing="21" translatesAutoresizingMaskIntoConstraints="NO" id="Qcb-zY-B1D">
+                                                            <rect key="frame" x="189" y="0.0" width="167" height="176"/>
+                                                            <subviews>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Merchant Name:" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yb8-x3-fBi">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="167" height="77.5"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="width" constant="167" id="wtE-s5-FOH"/>
+                                                                    </constraints>
+                                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                    <nil key="textColor"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Price:" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QBv-Ls-oMj">
+                                                                    <rect key="frame" x="0.0" y="98.5" width="167" height="77.5"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="width" constant="167" id="m9e-wq-cPL"/>
+                                                                    </constraints>
+                                                                    <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                                                    <color key="textColor" red="1" green="0.49327188729999999" blue="0.47399842739999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                            </subviews>
+                                                        </stackView>
+                                                    </subviews>
+                                                </stackView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="uE9-jY-tgh" secondAttribute="trailing" id="ZP3-DZ-yp9"/>
+                                                <constraint firstAttribute="bottom" secondItem="uE9-jY-tgh" secondAttribute="bottom" constant="26.5" id="bx8-qq-8Cn"/>
+                                                <constraint firstItem="uE9-jY-tgh" firstAttribute="top" secondItem="Gfu-El-zsX" secondAttribute="top" constant="27" id="gEi-VJ-C0k"/>
+                                                <constraint firstItem="uE9-jY-tgh" firstAttribute="leading" secondItem="Gfu-El-zsX" secondAttribute="leading" constant="20" id="wmF-z6-9z8"/>
+                                            </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="BestPrice" destination="QBv-Ls-oMj" id="9m6-DT-Cf7"/>
+                                            <outlet property="itemImage" destination="Ran-Kb-QoD" id="rWK-La-1Hc"/>
+                                            <outlet property="itemName" destination="Yb8-x3-fBi" id="BW0-0x-YW5"/>
+                                            <segue destination="AOa-UT-WjD" kind="show" id="gNz-vt-Tfj"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -945,7 +993,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-462.31884057971018" y="758.70535714285711"/>
+            <point key="canvasLocation" x="86" y="759"/>
         </scene>
         <!--User View Controller-->
         <scene sceneID="hhe-6h-luU">
@@ -1184,7 +1232,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MeV-gn-XZU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3200" y="-13"/>
+            <point key="canvasLocation" x="-3200" y="-11"/>
         </scene>
         <!--Login-->
         <scene sceneID="zFV-S7-00F">
@@ -1340,7 +1388,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qSu-mO-sJ2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3200" y="-649"/>
+            <point key="canvasLocation" x="-3200" y="-676"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="vnG-F5-gHd">
@@ -1383,15 +1431,16 @@
         <image name="icons8-_takeaway_hot_drink" width="32" height="32"/>
         <image name="icons8-compact_camera" width="32" height="32"/>
         <image name="icons8-sneakers_2_2" width="32" height="32"/>
-        <image name="like25" width="50" height="50"/>
+        <image name="like25" width="25" height="25"/>
         <image name="likewhite" width="25" height="25"/>
-        <image name="menu25" width="48" height="48"/>
+        <image name="menu25" width="24" height="24"/>
         <image name="scanwhite" width="25" height="25"/>
-        <image name="search25" width="50" height="50"/>
+        <image name="search25" width="25" height="25"/>
         <image name="searchwhite" width="25" height="25"/>
         <image name="shop" width="32" height="32"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="toR-Eh-noI"/>
+        <segue reference="gNz-vt-Tfj"/>
     </inferredMetricsTieBreakers>
 </document>
