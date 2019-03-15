@@ -162,6 +162,7 @@
 		A2AD81EB2233219300C340EC /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				AB572407223C0E54002365CF /* AltAccountViewController.swift */,
 				A26D37A0223304A70028A6FF /* FavoriteViewController.swift */,
 				A2AD81F02234449300C340EC /* ShopsViewController.swift */,
 				AB1623D12238337400FF4CE6 /* AccountNavigationViewController.swift */,
@@ -178,7 +179,6 @@
 			isa = PBXGroup;
 			children = (
 				AB1623CF223814B400FF4CE6 /* AccountViewController.swift */,
-				AB572407223C0E54002365CF /* AltAccountViewController.swift */,
 				A2FB405E2236EA4A006E5746 /* FBSDKLoginButton.swift */,
 				A2FB40612236EA4A006E5746 /* InAppViewController.swift */,
 				A2FB405F2236EA4A006E5746 /* LoginViewController.swift */,
