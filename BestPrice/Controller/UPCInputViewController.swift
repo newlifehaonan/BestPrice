@@ -154,7 +154,12 @@ class UPCInputViewController: UIViewController {
         }
     }
 
-    // MARK: 
+    // MARK: Navigation - Apply data from camera scanner on return
     @IBAction func unwindToUPCInput(segue: UIStoryboardSegue) {
+        
+        if let cameraViewController = segue.source as? CameraScannerViewController {
+            
+            UPCInputField.text = cameraViewController.scannedCode
+        }
     }
 }
