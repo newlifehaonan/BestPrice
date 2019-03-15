@@ -636,7 +636,7 @@
                             </stackView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a3N-2X-CXy">
                                 <rect key="frame" x="33" y="352" width="349" height="368"/>
-                                <mutableString key="text">BestPrice is an iOS application that allows a user to scan or manually enter a product’s UPC barcode to search a number of online retailers to return the best price. The application uses Apple's AVFoundation Kit to scan a UPC barcode (or the user can enter it manually). Once, the UPC barcode reader returns the UPC code, the application makes a REST API call to a UPC API Product database to return product information and price. BestPrice then use this information as parameters in a function that to return the retailer with the lowest price and display. The user then has the option to add the desired product to their wish list, so that they can revisit. The user’s wishlist is stored using a Firebase Database. Furthermore, the user can register for an account, or login to their account using Facebook authentication or by manually filling out a registration form.</mutableString>
+                                <string key="text">BestPrice is an iOS application that allows a user to scan or manually enter a product’s UPC barcode to search a number of online retailers to return the best price. The application uses Apple's AVFoundation Kit to scan a UPC barcode (or the user can enter it manually). Once, the UPC barcode reader returns the UPC code, the application makes a REST API call to a UPC API Product database to return product information and price. BestPrice then use this information as parameters in a function that to return the retailer with the lowest price and display. The user then has the option to add the desired product to their wish list, so that they can revisit. The user’s wishlist is stored using a Firebase Database. Furthermore, the user can register for an account, or login to their account using Facebook authentication or by manually filling out a registration form.</string>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -1083,7 +1083,6 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="306" height="165"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" relation="lessThanOrEqual" constant="306" id="1iM-Sj-P8S"/>
-                                                    <constraint firstAttribute="width" constant="306" id="CdY-ho-HLt"/>
                                                     <constraint firstAttribute="height" constant="165" id="kgp-3y-I5s"/>
                                                     <constraint firstAttribute="height" relation="lessThanOrEqual" constant="165" id="x7g-N6-hfi"/>
                                                 </constraints>
@@ -1430,7 +1429,7 @@
         <image name="user" width="47.201023101806641" height="47.201023101806641"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="htY-Fa-DmJ"/>
+        <segue reference="cnf-0A-Rpy"/>
         <segue reference="Bf8-1Y-UBm"/>
     </inferredMetricsTieBreakers>
 </document>
