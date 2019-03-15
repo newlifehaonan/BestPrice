@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.64" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="afX-GE-PhS">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="afX-GE-PhS">
     <device id="retina6_1" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.47"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -171,16 +171,24 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P9D-mJ-3h6">
-                                <rect key="frame" x="184" y="116" width="46" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P9D-mJ-3h6">
+                                <rect key="frame" x="20" y="44" width="64" height="30"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="&lt; Return">
+                                    <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
                                 <connections>
-                                    <segue destination="oxh-dN-ETv" kind="unwind" unwindAction="unwindToUPCInputWithSegue:" id="cKC-Cu-2wv"/>
+                                    <segue destination="oxh-dN-ETv" kind="unwind" identifier="unwindToUPCInput" unwindAction="unwindToUPCInputWithSegue:" id="cKC-Cu-2wv"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Rfm-Tv-sJw" firstAttribute="bottom" secondItem="P9D-mJ-3h6" secondAttribute="bottom" constant="788" id="1cY-WQ-ohS"/>
+                            <constraint firstItem="P9D-mJ-3h6" firstAttribute="top" secondItem="Rfm-Tv-sJw" secondAttribute="top" id="Nlp-lp-0W8"/>
+                            <constraint firstItem="Rfm-Tv-sJw" firstAttribute="trailing" secondItem="P9D-mJ-3h6" secondAttribute="trailing" constant="330" id="gM4-hJ-kL7"/>
+                            <constraint firstItem="P9D-mJ-3h6" firstAttribute="leading" secondItem="Rfm-Tv-sJw" secondAttribute="leading" constant="20" id="nKV-4r-kZE"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="Rfm-Tv-sJw"/>
                     </view>
                 </viewController>
@@ -1431,11 +1439,11 @@
         <image name="icons8-_takeaway_hot_drink" width="32" height="32"/>
         <image name="icons8-compact_camera" width="32" height="32"/>
         <image name="icons8-sneakers_2_2" width="32" height="32"/>
-        <image name="like25" width="25" height="25"/>
+        <image name="like25" width="50" height="50"/>
         <image name="likewhite" width="25" height="25"/>
-        <image name="menu25" width="24" height="24"/>
+        <image name="menu25" width="48" height="48"/>
         <image name="scanwhite" width="25" height="25"/>
-        <image name="search25" width="25" height="25"/>
+        <image name="search25" width="50" height="50"/>
         <image name="searchwhite" width="25" height="25"/>
         <image name="shop" width="32" height="32"/>
     </resources>
