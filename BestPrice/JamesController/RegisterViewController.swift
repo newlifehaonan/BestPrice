@@ -11,33 +11,9 @@ import FBSDKLoginKit
 import Firebase
 
 
-class RegisterViewController: UIViewController, FBSDKLoginButtonDelegate {
+class RegisterViewController: UIViewController, FBSDKLoginButtonDelegate, UITextFieldDelegate {
     
     
-    
-    
-    func loginButton(_ loginButton: FBSDKLoginButton!, didCompleteWith result: FBSDKLoginManagerLoginResult!, error: Error!) {
-        if error == nil{
-            let credential = FacebookAuthProvider.credential(withAccessToken: FBSDKAccessToken.current().tokenString)
-            
-            Auth.auth().signInAndRetrieveData(with: credential, completion: {(authResult, error) in
-                if let error = error {
-                    print(error.localizedDescription)
-                    return
-                }
-            
-                 self.performSegue(withIdentifier: "goIn", sender: self)
-                
-            })
-        }
-        
-    }
-    
-    func loginButtonDidLogOut(_ loginButton: FBSDKLoginButton!) {
-        
-    }
-    
-
     @IBOutlet weak var passwordTextField: UIStackView!
     @IBOutlet weak var usernameTextField: UITextField!
     
@@ -45,13 +21,14 @@ class RegisterViewController: UIViewController, FBSDKLoginButtonDelegate {
     
     @IBOutlet weak var facebookButton: FBSDKLoginButton!
     
-    @IBOutlet weak var passwordText: UIButton!
-    
+ 
     
     @IBOutlet weak var registerButton: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
         
+     passwordTextEntry.delegate = self
+      usernameTextField.delegate = self
         
      //   usernameTextField.setLeftImage(imageName: "email50")
     //    passwordTextEntry.setLeftImage(imageName: "password50")
@@ -69,6 +46,35 @@ class RegisterViewController: UIViewController, FBSDKLoginButtonDelegate {
     }
     
     
+    
+    func loginButton(_ loginButton: FBSDKLoginButton!, didCompleteWith result: FBSDKLoginManagerLoginResult!, error: Error!) {
+        if error == nil{
+            let credential = FacebookAuthProvider.credential(withAccessToken: FBSDKAccessToken.current().tokenString)
+            
+            Auth.auth().signInAndRetrieveData(with: credential, completion: {(authResult, error) in
+                if let error = error {
+                    print(error.localizedDescription)
+                    return
+                }
+                
+                self.performSegue(withIdentifier: "goIn", sender: self)
+                
+            })
+        }
+        
+    }
+    
+    func loginButtonDidLogOut(_ loginButton: FBSDKLoginButton!) {
+        
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool
+    {
+        textField.resignFirstResponder()
+        return true
+    }
+    
+
    
     override func viewWillDisappear(_ animated: Bool)
     {

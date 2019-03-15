@@ -11,7 +11,7 @@ import Firebase
 import FBSDKLoginKit
 
 
-class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
+class LoginViewController: UIViewController, FBSDKLoginButtonDelegate, UITextFieldDelegate {
    
     
 
@@ -24,6 +24,8 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        emailTextField.delegate = self
+        passwordTextField.delegate = self
         
         facebookButton.delegate = self
         facebookButton.readPermissions = ["email"]
@@ -60,7 +62,12 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
     func loginButtonDidLogOut(_ loginButton: FBSDKLoginButton!) {
         
     }
-    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool
+    {
+        textField.resignFirstResponder()
+        return true
+    }
+
   
 
     override func viewWillDisappear(_ animated: Bool)
