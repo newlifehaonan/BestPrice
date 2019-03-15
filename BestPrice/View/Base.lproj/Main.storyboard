@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.64" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="afX-GE-PhS">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="afX-GE-PhS">
     <device id="retina6_1" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.47"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -1055,14 +1055,24 @@
                                     <segue destination="4As-Z0-Vn5" kind="show" id="ogO-cz-Cjz"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BestPriceLogo" translatesAutoresizingMaskIntoConstraints="NO" id="ZpY-D0-RSu">
+                                <rect key="frame" x="10" y="148" width="394" height="202"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="394" id="EgF-CG-usD"/>
+                                    <constraint firstAttribute="height" constant="202" id="xhc-2P-go8"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="ZpY-D0-RSu" firstAttribute="top" secondItem="o8u-cg-x5X" secondAttribute="top" constant="60" id="1jc-sE-Dt8"/>
                             <constraint firstItem="rX7-Iu-kUD" firstAttribute="trailing" secondItem="o8u-cg-x5X" secondAttribute="trailing" constant="-8" id="8mh-LQ-3Oz"/>
+                            <constraint firstItem="ZpY-D0-RSu" firstAttribute="leading" secondItem="o8u-cg-x5X" secondAttribute="leading" constant="10" id="AqP-Rh-xdF"/>
                             <constraint firstItem="3jn-MY-2EW" firstAttribute="leading" secondItem="o8u-cg-x5X" secondAttribute="leading" constant="8" id="CHg-TD-FEc"/>
                             <constraint firstItem="rX7-Iu-kUD" firstAttribute="leading" secondItem="o8u-cg-x5X" secondAttribute="leading" constant="8" id="VCB-Ey-1ht"/>
                             <constraint firstItem="3jn-MY-2EW" firstAttribute="trailing" secondItem="o8u-cg-x5X" secondAttribute="trailing" constant="-8" id="blR-xm-gEp"/>
                             <constraint firstItem="o8u-cg-x5X" firstAttribute="bottom" secondItem="3jn-MY-2EW" secondAttribute="bottom" constant="120" id="f4Z-rA-it5"/>
+                            <constraint firstItem="o8u-cg-x5X" firstAttribute="trailing" secondItem="ZpY-D0-RSu" secondAttribute="trailing" constant="10" id="hTP-4w-CEj"/>
                             <constraint firstItem="3jn-MY-2EW" firstAttribute="top" secondItem="rX7-Iu-kUD" secondAttribute="bottom" constant="8" id="pbu-dx-wxE"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="o8u-cg-x5X"/>
@@ -1075,7 +1085,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="R0N-tA-bTY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-4403" y="-291"/>
+            <point key="canvasLocation" x="-4404.347826086957" y="-291.29464285714283"/>
         </scene>
         <!--Register-->
         <scene sceneID="h5I-DZ-EAJ">
@@ -1086,13 +1096,27 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="EFf-dX-cnH">
-                                <rect key="frame" x="8" y="268" width="398" height="290"/>
+                                <rect key="frame" x="8" y="128" width="306" height="465"/>
                                 <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="kDX-oi-0qb">
+                                        <rect key="frame" x="0.0" y="0.0" width="306" height="165"/>
+                                        <subviews>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BestPriceLogo" translatesAutoresizingMaskIntoConstraints="NO" id="jxg-yn-brK">
+                                                <rect key="frame" x="0.0" y="0.0" width="306" height="165"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="165" id="bHA-gx-tGo"/>
+                                                    <constraint firstAttribute="width" relation="lessThanOrEqual" constant="306" id="bYq-iY-Ylh"/>
+                                                    <constraint firstAttribute="width" constant="306" id="nc4-Wc-SzU"/>
+                                                    <constraint firstAttribute="height" relation="lessThanOrEqual" constant="165" id="zxc-li-qdi"/>
+                                                </constraints>
+                                            </imageView>
+                                        </subviews>
+                                    </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="HyQ-65-MJy">
-                                        <rect key="frame" x="0.0" y="0.0" width="398" height="50"/>
+                                        <rect key="frame" x="0.0" y="175" width="306" height="50"/>
                                         <subviews>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="email" textAlignment="center" minimumFontSize="21" translatesAutoresizingMaskIntoConstraints="NO" id="fhG-v0-Ksy">
-                                                <rect key="frame" x="0.0" y="0.0" width="398" height="50"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="306" height="50"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="50" id="72R-20-SIZ"/>
@@ -1107,10 +1131,10 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="D7r-Pd-brV">
-                                        <rect key="frame" x="0.0" y="60" width="398" height="50"/>
+                                        <rect key="frame" x="0.0" y="235" width="306" height="50"/>
                                         <subviews>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="password" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="q2P-vV-jJ3">
-                                                <rect key="frame" x="0.0" y="0.0" width="398" height="50"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="306" height="50"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="50" id="Jjp-iy-nCc"/>
@@ -1122,16 +1146,15 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="ejq-vU-BzT">
-                                        <rect key="frame" x="0.0" y="120" width="398" height="50"/>
+                                        <rect key="frame" x="0.0" y="295" width="306" height="50"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ara-yS-ASf">
-                                                <rect key="frame" x="24.5" y="0.0" width="349" height="50"/>
+                                                <rect key="frame" x="24.5" y="0.0" width="257" height="50"/>
                                                 <color key="backgroundColor" red="0.2462306494" green="0.60479709370000001" blue="0.35173650099999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="50" id="hHt-ah-pWB"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
-                                                <inset key="contentEdgeInsets" minX="100" minY="0.0" maxX="100" maxY="0.0"/>
                                                 <state key="normal" title="REGISTER">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
@@ -1157,10 +1180,10 @@
                                         </constraints>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleAspectFit" horizontalCompressionResistancePriority="400" translatesAutoresizingMaskIntoConstraints="NO" id="Xg5-dB-b7h">
-                                        <rect key="frame" x="0.0" y="180" width="398" height="50"/>
+                                        <rect key="frame" x="0.0" y="355" width="306" height="50"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="iconfb" translatesAutoresizingMaskIntoConstraints="NO" id="GBC-yh-9Wo">
-                                                <rect key="frame" x="0.0" y="0.0" width="398" height="50"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="306" height="50"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="50" id="9di-r8-Hb3"/>
                                                     <constraint firstAttribute="height" constant="50" id="OzF-jp-8vB"/>
@@ -1169,16 +1192,14 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="VP2-HI-TVR">
-                                        <rect key="frame" x="0.0" y="240" width="398" height="50"/>
+                                        <rect key="frame" x="0.0" y="415" width="306" height="50"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OJq-Q4-6pS" customClass="FacebookButton" customModule="BestPrice" customModuleProvider="target">
-                                                <rect key="frame" x="24.5" y="0.0" width="349" height="50"/>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OJq-Q4-6pS" customClass="FacebookButton" customModule="BestPrice" customModuleProvider="target">
+                                                <rect key="frame" x="24.5" y="0.0" width="257" height="50"/>
                                                 <color key="backgroundColor" red="0.36415998319999998" green="0.47464216850000002" blue="0.60479709370000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="50" id="Udg-MU-rRl"/>
                                                 </constraints>
-                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
-                                                <inset key="contentEdgeInsets" minX="100" minY="0.0" maxX="100" maxY="0.0"/>
                                                 <state key="normal" title="FACEBOOK">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
@@ -1217,7 +1238,7 @@
                             <constraint firstItem="kWQ-jg-P1F" firstAttribute="trailing" secondItem="EFf-dX-cnH" secondAttribute="trailing" constant="8" id="Zif-uV-PcG"/>
                             <constraint firstItem="EFf-dX-cnH" firstAttribute="leading" secondItem="kWQ-jg-P1F" secondAttribute="leading" constant="8" id="ajB-gj-Eip"/>
                             <constraint firstItem="kWQ-jg-P1F" firstAttribute="trailing" secondItem="Ara-yS-ASf" secondAttribute="trailing" constant="32.5" id="bu8-Lq-7Lz"/>
-                            <constraint firstItem="EFf-dX-cnH" firstAttribute="top" secondItem="kWQ-jg-P1F" secondAttribute="top" constant="180" id="kRa-8r-goB"/>
+                            <constraint firstItem="EFf-dX-cnH" firstAttribute="top" secondItem="kWQ-jg-P1F" secondAttribute="top" constant="40" id="kRa-8r-goB"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="kWQ-jg-P1F"/>
                     </view>
@@ -1243,13 +1264,33 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="lkR-ER-hnO">
-                                <rect key="frame" x="9" y="212" width="396" height="290"/>
+                                <rect key="frame" x="9" y="138" width="306" height="465"/>
                                 <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="pmm-Qm-dgb">
+                                        <rect key="frame" x="0.0" y="0.0" width="306" height="165"/>
+                                        <subviews>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BestPriceLogo" translatesAutoresizingMaskIntoConstraints="NO" id="bNz-yA-BNt">
+                                                <rect key="frame" x="0.0" y="0.0" width="306" height="165"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" relation="lessThanOrEqual" constant="306" id="1iM-Sj-P8S"/>
+                                                    <constraint firstAttribute="width" constant="306" id="CdY-ho-HLt"/>
+                                                    <constraint firstAttribute="height" constant="165" id="kgp-3y-I5s"/>
+                                                    <constraint firstAttribute="height" relation="lessThanOrEqual" constant="165" id="x7g-N6-hfi"/>
+                                                </constraints>
+                                            </imageView>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="bNz-yA-BNt" firstAttribute="leading" secondItem="pmm-Qm-dgb" secondAttribute="leading" id="8vB-S3-oQw"/>
+                                            <constraint firstItem="bNz-yA-BNt" firstAttribute="top" secondItem="pmm-Qm-dgb" secondAttribute="top" id="KoJ-Ae-wQG"/>
+                                            <constraint firstAttribute="trailing" secondItem="bNz-yA-BNt" secondAttribute="trailing" id="fgd-Hz-3H2"/>
+                                            <constraint firstAttribute="bottom" secondItem="bNz-yA-BNt" secondAttribute="bottom" id="huV-em-yG8"/>
+                                        </constraints>
+                                    </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="ahI-Aj-z91">
-                                        <rect key="frame" x="0.0" y="0.0" width="396" height="50"/>
+                                        <rect key="frame" x="0.0" y="175" width="306" height="50"/>
                                         <subviews>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="email" textAlignment="center" minimumFontSize="21" translatesAutoresizingMaskIntoConstraints="NO" id="GT1-TT-YmF">
-                                                <rect key="frame" x="0.0" y="0.0" width="396" height="50"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="306" height="50"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="50" id="2rT-I3-QUz"/>
@@ -1264,10 +1305,10 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="p7i-Ff-JgK">
-                                        <rect key="frame" x="0.0" y="60" width="396" height="50"/>
+                                        <rect key="frame" x="0.0" y="235" width="306" height="50"/>
                                         <subviews>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="password" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2Nn-vL-MWj">
-                                                <rect key="frame" x="0.0" y="0.0" width="396" height="50"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="306" height="50"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="50" id="FIP-l8-G7f"/>
@@ -1279,16 +1320,15 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="b5D-9U-0Wa">
-                                        <rect key="frame" x="0.0" y="120" width="396" height="50"/>
+                                        <rect key="frame" x="0.0" y="295" width="306" height="50"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nkv-Gy-YUJ">
-                                                <rect key="frame" x="24.5" y="0.0" width="347" height="50"/>
+                                                <rect key="frame" x="24.5" y="0.0" width="257" height="50"/>
                                                 <color key="backgroundColor" red="0.2462306494" green="0.60479709370000001" blue="0.35173650099999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="50" id="UU0-eY-9nq"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
-                                                <inset key="contentEdgeInsets" minX="100" minY="0.0" maxX="100" maxY="0.0"/>
                                                 <state key="normal" title="LOGIN">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
@@ -1314,10 +1354,10 @@
                                         </constraints>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleAspectFit" horizontalCompressionResistancePriority="400" translatesAutoresizingMaskIntoConstraints="NO" id="FoE-rf-3Sc">
-                                        <rect key="frame" x="0.0" y="180" width="396" height="50"/>
+                                        <rect key="frame" x="0.0" y="355" width="306" height="50"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="iconfb" translatesAutoresizingMaskIntoConstraints="NO" id="8K7-al-XFk">
-                                                <rect key="frame" x="0.0" y="0.0" width="396" height="50"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="306" height="50"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="50" id="oQv-fW-zyD"/>
                                                     <constraint firstAttribute="width" constant="50" id="t6U-gu-4E8"/>
@@ -1326,16 +1366,14 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="rLD-3R-JZr">
-                                        <rect key="frame" x="0.0" y="240" width="396" height="50"/>
+                                        <rect key="frame" x="0.0" y="415" width="306" height="50"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7mN-aN-9k7" customClass="FacebookButton" customModule="BestPrice" customModuleProvider="target">
-                                                <rect key="frame" x="24.5" y="0.0" width="347" height="50"/>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7mN-aN-9k7" customClass="FacebookButton" customModule="BestPrice" customModuleProvider="target">
+                                                <rect key="frame" x="24.5" y="0.0" width="257" height="50"/>
                                                 <color key="backgroundColor" red="0.36415998319999998" green="0.47464216850000002" blue="0.60479709370000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="50" id="VaM-ea-RV0"/>
                                                 </constraints>
-                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
-                                                <inset key="contentEdgeInsets" minX="100" minY="0.0" maxX="100" maxY="0.0"/>
                                                 <state key="normal" title="FACEBOOK">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
@@ -1374,7 +1412,7 @@
                         <constraints>
                             <constraint firstItem="OGK-ky-AuN" firstAttribute="trailing" secondItem="lkR-ER-hnO" secondAttribute="trailing" constant="9" id="4pC-KB-LE5"/>
                             <constraint firstItem="lkR-ER-hnO" firstAttribute="leading" secondItem="OGK-ky-AuN" secondAttribute="leading" constant="9" id="INj-wW-r4Y"/>
-                            <constraint firstItem="lkR-ER-hnO" firstAttribute="top" secondItem="OGK-ky-AuN" secondAttribute="top" constant="124" id="apq-kn-zTS"/>
+                            <constraint firstItem="lkR-ER-hnO" firstAttribute="top" secondItem="OGK-ky-AuN" secondAttribute="top" constant="50" id="apq-kn-zTS"/>
                             <constraint firstItem="OGK-ky-AuN" firstAttribute="trailing" secondItem="lkR-ER-hnO" secondAttribute="trailing" constant="9" id="p9J-B9-Itg"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="OGK-ky-AuN"/>
@@ -1382,13 +1420,14 @@
                     <connections>
                         <outlet property="emailTextField" destination="GT1-TT-YmF" id="sen-lc-O1N"/>
                         <outlet property="facebookButton" destination="7mN-aN-9k7" id="aBc-0g-hhu"/>
+                        <outlet property="loginButton" destination="nkv-Gy-YUJ" id="7NK-No-o2C"/>
                         <outlet property="passwordTextField" destination="2Nn-vL-MWj" id="Lf5-gS-fi4"/>
                         <segue destination="SQu-tY-ivN" kind="show" identifier="loggedIn" id="cnf-0A-Rpy"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qSu-mO-sJ2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3200" y="-676"/>
+            <point key="canvasLocation" x="-3200.0000000000005" y="-676.33928571428567"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="vnG-F5-gHd">
@@ -1425,17 +1464,18 @@
         </scene>
     </scenes>
     <resources>
+        <image name="BestPriceLogo" width="2100" height="500"/>
         <image name="barcode" width="100" height="100"/>
         <image name="cancle50" width="50" height="50"/>
         <image name="iconfb" width="175" height="175"/>
         <image name="icons8-_takeaway_hot_drink" width="32" height="32"/>
         <image name="icons8-compact_camera" width="32" height="32"/>
         <image name="icons8-sneakers_2_2" width="32" height="32"/>
-        <image name="like25" width="25" height="25"/>
+        <image name="like25" width="50" height="50"/>
         <image name="likewhite" width="25" height="25"/>
-        <image name="menu25" width="24" height="24"/>
+        <image name="menu25" width="48" height="48"/>
         <image name="scanwhite" width="25" height="25"/>
-        <image name="search25" width="25" height="25"/>
+        <image name="search25" width="50" height="50"/>
         <image name="searchwhite" width="25" height="25"/>
         <image name="shop" width="32" height="32"/>
     </resources>

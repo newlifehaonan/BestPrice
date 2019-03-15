@@ -15,7 +15,8 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
    
     
 
-
+    @IBOutlet weak var loginButton: UIButton!
+    
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var emailTextField: UITextField!
     
@@ -31,8 +32,8 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
         self.navigationController?.isNavigationBarHidden = false
         self.view.backgroundColor = UIColor(patternImage: UIImage(named:"checkout1")!)
       
-        //facebookButton.layer.borderColor = UIColor.white.cgColor
-       // loginButton.layer.borderColor = UIColor.white.cgColor
+        facebookButton.layer.borderColor = UIColor.white.cgColor
+       loginButton.layer.borderColor = UIColor.white.cgColor
        
     }
     

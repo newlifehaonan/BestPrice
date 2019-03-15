@@ -51,8 +51,10 @@ class RegisterViewController: UIViewController, FBSDKLoginButtonDelegate {
     @IBOutlet weak var registerButton: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
-        usernameTextField.setLeftImage(imageName: "email50")
-        passwordTextEntry.setLeftImage(imageName: "password50")
+        
+        
+     //   usernameTextField.setLeftImage(imageName: "email50")
+    //    passwordTextEntry.setLeftImage(imageName: "password50")
         facebookButton.delegate = self
        facebookButton.readPermissions = ["email"]
        
