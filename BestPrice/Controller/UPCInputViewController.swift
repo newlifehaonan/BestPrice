@@ -11,7 +11,7 @@ import Alamofire
 import SwiftyJSON
 import WBLoadingIndicatorView
 
-class UPCInputViewController: UIViewController {
+class UPCInputViewController: UIViewController, UITextFieldDelegate{
 
     @IBOutlet weak var UPCInputField: UITextField!
     
@@ -33,6 +33,7 @@ class UPCInputViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         self.navigationController?.isNavigationBarHidden = true
+        UPCInputField.delegate = self
     }
     override func viewDidDisappear(_ animated: Bool) {
         good = Merchandize()
@@ -54,6 +55,12 @@ class UPCInputViewController: UIViewController {
         else {
             print("Error invalid input)")
         }
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool
+    {
+        textField.resignFirstResponder()
+        return true
     }
     
     // MARK: - NetWorking

@@ -24,6 +24,8 @@ class FavoriteViewController: UIViewController {
     @IBOutlet weak var favoriteList: UITableView!
     
     override func viewWillAppear(_ animated: Bool) {
+        items = [Merchandize]()
+        retailers = [Retailer]()
         getFavorite()
         favoriteList.reloadData()
     }
@@ -31,10 +33,8 @@ class FavoriteViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         ref = Database.database().reference()
-//        getFavorite()
-//        favoriteList.reloadData()
         self.tabBarController?.tabBar.isHidden = false
-        
+    
         // Do any additional setup after loading the view.
         favoriteList.dataSource = self
         favoriteList.delegate = self
@@ -108,11 +108,11 @@ class FavoriteViewController: UIViewController {
                     if let newImgVal = value as? String {
                         self.imageArray.append(newImgVal)
                     }
-                    self.items.append(Merchandize(name: self.faveName, detail: self.faveDetail, images: self.imageArray, shops: self.retailers)
-                    )
                 }
             }
         }
+        self.items.append(Merchandize(name: self.faveName, detail: self.faveDetail, images: self.imageArray, shops: self.retailers)
+        )
     }
     
     //MARK: final function of get favorite data from firebase
@@ -150,7 +150,6 @@ extension FavoriteViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        print(items.count)
         return items.count
     }
     
