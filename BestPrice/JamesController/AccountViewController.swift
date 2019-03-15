@@ -15,6 +15,7 @@ class AccountViewController: UIViewController {
 
     @IBOutlet weak var nameText: UILabel!
     @IBOutlet weak var fbprofileimg: UIImageView!
+    @IBOutlet weak var aboutusText: UITextView!
     
     override func viewWillAppear(_ animated: Bool) {
         
@@ -62,15 +63,14 @@ class AccountViewController: UIViewController {
         }
     }
     
-//    @IBAction func updateInfo(_ sender: Any) {
-//    }
-//
-//    override func viewWillAppear(_ animated: Bool) {
-//        super.viewWillAppear(animated)
-//
-//        // Hide the navigation bar on the this view controller
-//        self.navigationController?.setNavigationBarHidden(true, animated: animated)
-//    }
+
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        aboutusText.setContentOffset(.zero, animated: false)
+    }
+    
+    
+    
     func getData(url: URL, completion: @escaping (Data?, URLResponse?, Error?) -> ()) {
         URLSession.shared.dataTask(with: url, completionHandler: completion).resume()
     }

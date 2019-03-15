@@ -45,6 +45,9 @@ class AltAccountViewController: UIViewController, UITextFieldDelegate {
                     
                 default:
                     email.text = userInfo.email
+                    name.text = userInfo.displayName
+                    altnameText1.text = userInfo.displayName
+                  
                     
                     print("user is signed in with \(userInfo.providerID)")
                     
@@ -61,11 +64,19 @@ class AltAccountViewController: UIViewController, UITextFieldDelegate {
     
     
         @IBAction func updateInfo(_ sender: Any) {
-            
-        
-         
-            
-        }
+            let changeRequest = Auth.auth().currentUser?.createProfileChangeRequest()
+           changeRequest?.displayName = name.text!
+            changeRequest?.commitChanges { (error) in
+                
+                if error == nil{
+                    self.altnameText1.text = changeRequest?.displayName
+                                
+                } else{
+                    
+                }
+                        }
+                    }
+                    
     
         override func viewWillAppear(_ animated: Bool) {
             super.viewWillAppear(animated)
