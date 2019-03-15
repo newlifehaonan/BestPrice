@@ -1083,7 +1083,6 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="396" height="165"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" relation="lessThanOrEqual" constant="306" id="1iM-Sj-P8S"/>
-                                                    <constraint firstAttribute="width" constant="306" id="CdY-ho-HLt"/>
                                                     <constraint firstAttribute="height" constant="165" id="kgp-3y-I5s"/>
                                                     <constraint firstAttribute="height" relation="lessThanOrEqual" constant="165" id="x7g-N6-hfi"/>
                                                 </constraints>
@@ -1430,7 +1429,9 @@
         <image name="user" width="512" height="512"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="toR-Eh-noI"/>
+
+        <segue reference="cnf-0A-Rpy"/>
+
         <segue reference="Bf8-1Y-UBm"/>
     </inferredMetricsTieBreakers>
 </document>
