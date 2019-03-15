@@ -33,6 +33,7 @@
 		AB1623D0223814B400FF4CE6 /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB1623CF223814B400FF4CE6 /* AccountViewController.swift */; };
 		AB1623D22238337400FF4CE6 /* AccountNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB1623D12238337400FF4CE6 /* AccountNavigationViewController.swift */; };
 		AB1623D4223853D200FF4CE6 /* UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB1623D3223853D200FF4CE6 /* UserProfile.swift */; };
+		AB572408223C0E54002365CF /* AltAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB572407223C0E54002365CF /* AltAccountViewController.swift */; };
 		BE33AA77223ADF3C00BA8C2B /* CameraScannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE33AA76223ADF3C00BA8C2B /* CameraScannerViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -66,6 +67,7 @@
 		AB1623CF223814B400FF4CE6 /* AccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
 		AB1623D12238337400FF4CE6 /* AccountNavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountNavigationViewController.swift; sourceTree = "<group>"; };
 		AB1623D3223853D200FF4CE6 /* UserProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfile.swift; sourceTree = "<group>"; };
+		AB572407223C0E54002365CF /* AltAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AltAccountViewController.swift; sourceTree = "<group>"; };
 		BE33AA76223ADF3C00BA8C2B /* CameraScannerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraScannerViewController.swift; sourceTree = "<group>"; };
 		E95BF6AEC547A446A717EAF4 /* Pods_BestPrice.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BestPrice.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EC4F5C5A445AEAF125955320 /* Pods-BestPrice.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BestPrice.debug.xcconfig"; path = "Target Support Files/Pods-BestPrice/Pods-BestPrice.debug.xcconfig"; sourceTree = "<group>"; };
@@ -160,9 +162,9 @@
 		A2AD81EB2233219300C340EC /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				AB572407223C0E54002365CF /* AltAccountViewController.swift */,
 				A26D37A0223304A70028A6FF /* FavoriteViewController.swift */,
 				A2AD81F02234449300C340EC /* ShopsViewController.swift */,
-				AB1623CF223814B400FF4CE6 /* AccountViewController.swift */,
 				AB1623D12238337400FF4CE6 /* AccountNavigationViewController.swift */,
 				A2AD81F62234454800C340EC /* UPCInputViewController.swift */,
 				A2AD81F82234528600C340EC /* ShopCardCollectionViewCell.swift */,
@@ -176,6 +178,7 @@
 		A2FB405A2236E99B006E5746 /* JamesController */ = {
 			isa = PBXGroup;
 			children = (
+				AB1623CF223814B400FF4CE6 /* AccountViewController.swift */,
 				A2FB405E2236EA4A006E5746 /* FBSDKLoginButton.swift */,
 				A2FB40612236EA4A006E5746 /* InAppViewController.swift */,
 				A2FB405F2236EA4A006E5746 /* LoginViewController.swift */,
@@ -345,6 +348,7 @@
 				A26D37A1223304A70028A6FF /* FavoriteViewController.swift in Sources */,
 				A2FB40632236EA4A006E5746 /* FBSDKLoginButton.swift in Sources */,
 				A2AD81FB223473C200C340EC /* ItemDetailViewController.swift in Sources */,
+				AB572408223C0E54002365CF /* AltAccountViewController.swift in Sources */,
 				A2AD81F72234454800C340EC /* UPCInputViewController.swift in Sources */,
 				A2AD81F12234449300C340EC /* ShopsViewController.swift in Sources */,
 				AB1623D0223814B400FF4CE6 /* AccountViewController.swift in Sources */,

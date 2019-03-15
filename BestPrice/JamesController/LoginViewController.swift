@@ -11,11 +11,12 @@ import Firebase
 import FBSDKLoginKit
 
 
-class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
+class LoginViewController: UIViewController, FBSDKLoginButtonDelegate, UITextFieldDelegate {
    
     
 
-
+    @IBOutlet weak var loginButton: UIButton!
+    
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var emailTextField: UITextField!
     
@@ -23,6 +24,8 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        emailTextField.delegate = self
+        passwordTextField.delegate = self
         
         facebookButton.delegate = self
         facebookButton.readPermissions = ["email"]
@@ -31,8 +34,8 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
         self.navigationController?.isNavigationBarHidden = false
         self.view.backgroundColor = UIColor(patternImage: UIImage(named:"checkout1")!)
       
-        //facebookButton.layer.borderColor = UIColor.white.cgColor
-       // loginButton.layer.borderColor = UIColor.white.cgColor
+        facebookButton.layer.borderColor = UIColor.white.cgColor
+       loginButton.layer.borderColor = UIColor.white.cgColor
        
     }
     
@@ -59,7 +62,12 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
     func loginButtonDidLogOut(_ loginButton: FBSDKLoginButton!) {
         
     }
-    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool
+    {
+        textField.resignFirstResponder()
+        return true
+    }
+
   
 
     override func viewWillDisappear(_ animated: Bool)
