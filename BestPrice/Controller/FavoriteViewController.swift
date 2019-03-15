@@ -24,6 +24,8 @@ class FavoriteViewController: UIViewController {
     @IBOutlet weak var favoriteList: UITableView!
     
     override func viewWillAppear(_ animated: Bool) {
+        self.items = [Merchandize]()
+        self.retailers = [Retailer]()
         getFavorite()
         favoriteList.reloadData()
     }
@@ -108,10 +110,10 @@ class FavoriteViewController: UIViewController {
                     if let newImgVal = value as? String {
                         self.imageArray.append(newImgVal)
                     }
-                    self.items.append(Merchandize(name: self.faveName, detail: self.faveDetail, images: self.imageArray, shops: self.retailers)
-                    )
                 }
             }
+            self.items.append(Merchandize(name: self.faveName, detail: self.faveDetail, images: self.imageArray, shops: self.retailers)
+            )
         }
     }
     

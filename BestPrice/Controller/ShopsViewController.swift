@@ -49,6 +49,7 @@ class ShopsViewController: UIViewController {
     override func viewWillDisappear(_ animated: Bool) {
         merchandize = nil
     }
+    
 }
 
 
