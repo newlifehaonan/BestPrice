@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A20418BE223B207F003C401E /* FavoriteTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20418BD223B207F003C401E /* FavoriteTableViewCell.swift */; };
 		A26D379F223304A70028A6FF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A26D379E223304A70028A6FF /* AppDelegate.swift */; };
 		A26D37A1223304A70028A6FF /* FavoriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A26D37A0223304A70028A6FF /* FavoriteViewController.swift */; };
 		A26D37A4223304A70028A6FF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A26D37A2223304A70028A6FF /* Main.storyboard */; };
@@ -37,6 +38,7 @@
 
 /* Begin PBXFileReference section */
 		8503F7C36350375317634FBB /* Pods-BestPrice.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BestPrice.release.xcconfig"; path = "Target Support Files/Pods-BestPrice/Pods-BestPrice.release.xcconfig"; sourceTree = "<group>"; };
+		A20418BD223B207F003C401E /* FavoriteTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteTableViewCell.swift; sourceTree = "<group>"; };
 		A26D379B223304A70028A6FF /* BestPrice.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BestPrice.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A26D379E223304A70028A6FF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A26D37A0223304A70028A6FF /* FavoriteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteViewController.swift; sourceTree = "<group>"; };
@@ -166,6 +168,7 @@
 				A2AD81F82234528600C340EC /* ShopCardCollectionViewCell.swift */,
 				A2AD81FA223473C200C340EC /* ItemDetailViewController.swift */,
 				A2FB40582235B617006E5746 /* WebViewController.swift */,
+				A20418BD223B207F003C401E /* FavoriteTableViewCell.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -335,6 +338,7 @@
 				A2FB40642236EA4A006E5746 /* LoginViewController.swift in Sources */,
 				A2AD81F5223444EE00C340EC /* Retailer.swift in Sources */,
 				A2FB40652236EA4A006E5746 /* UserViewController.swift in Sources */,
+				A20418BE223B207F003C401E /* FavoriteTableViewCell.swift in Sources */,
 				A2FB40622236EA4A006E5746 /* RegisterViewController.swift in Sources */,
 				A2FB40592235B617006E5746 /* WebViewController.swift in Sources */,
 				A2FB40662236EA4A006E5746 /* InAppViewController.swift in Sources */,

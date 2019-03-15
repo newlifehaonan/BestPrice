@@ -38,8 +38,8 @@ class AccountViewController: UITableViewController {
                 }
             }
         }
-        
     }
+    
     @IBAction func updateInfo(_ sender: Any) {
     }
     
