@@ -11,7 +11,7 @@ import Alamofire
 import SwiftyJSON
 import WBLoadingIndicatorView
 
-class UPCInputViewController: UIViewController {
+class UPCInputViewController: UIViewController, UITextFieldDelegate {
 
     @IBOutlet weak var UPCInputField: UITextField!
     
@@ -32,10 +32,17 @@ class UPCInputViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        UPCInputField.delegate = self
         self.navigationController?.isNavigationBarHidden = true
     }
     override func viewDidDisappear(_ animated: Bool) {
         good = Merchandize()
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool
+    {
+        textField.resignFirstResponder()
+        return true
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

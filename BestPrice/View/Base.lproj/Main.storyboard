@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="afX-GE-PhS">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.64" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="afX-GE-PhS">
     <device id="retina6_1" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.47"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -102,7 +102,7 @@
                                                 </constraints>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits" returnKeyType="go"/>
+                                                <textInputTraits key="textInputTraits" returnKeyType="done"/>
                                             </textField>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lQs-T5-mG0">
                                                 <rect key="frame" x="0.0" y="132" width="374" height="50"/>
@@ -1074,13 +1074,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="lkR-ER-hnO">
-                                <rect key="frame" x="9" y="138" width="306" height="465"/>
+                                <rect key="frame" x="9" y="138" width="396" height="465"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="pmm-Qm-dgb">
-                                        <rect key="frame" x="0.0" y="0.0" width="306" height="165"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="396" height="165"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BestPriceLogo" translatesAutoresizingMaskIntoConstraints="NO" id="bNz-yA-BNt">
-                                                <rect key="frame" x="0.0" y="0.0" width="306" height="165"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="396" height="165"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" relation="lessThanOrEqual" constant="306" id="1iM-Sj-P8S"/>
                                                     <constraint firstAttribute="height" constant="165" id="kgp-3y-I5s"/>
@@ -1096,10 +1096,10 @@
                                         </constraints>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="ahI-Aj-z91">
-                                        <rect key="frame" x="0.0" y="175" width="306" height="50"/>
+                                        <rect key="frame" x="0.0" y="175" width="396" height="50"/>
                                         <subviews>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="email" textAlignment="center" minimumFontSize="21" translatesAutoresizingMaskIntoConstraints="NO" id="GT1-TT-YmF">
-                                                <rect key="frame" x="0.0" y="0.0" width="306" height="50"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="396" height="50"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="50" id="2rT-I3-QUz"/>
@@ -1114,10 +1114,10 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="p7i-Ff-JgK">
-                                        <rect key="frame" x="0.0" y="235" width="306" height="50"/>
+                                        <rect key="frame" x="0.0" y="235" width="396" height="50"/>
                                         <subviews>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="password" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2Nn-vL-MWj">
-                                                <rect key="frame" x="0.0" y="0.0" width="306" height="50"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="396" height="50"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="50" id="FIP-l8-G7f"/>
@@ -1129,10 +1129,10 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="b5D-9U-0Wa">
-                                        <rect key="frame" x="0.0" y="295" width="306" height="50"/>
+                                        <rect key="frame" x="0.0" y="295" width="396" height="50"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nkv-Gy-YUJ">
-                                                <rect key="frame" x="24.5" y="0.0" width="257" height="50"/>
+                                                <rect key="frame" x="24.5" y="0.0" width="347" height="50"/>
                                                 <color key="backgroundColor" red="0.2462306494" green="0.60479709370000001" blue="0.35173650099999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="50" id="UU0-eY-9nq"/>
@@ -1163,10 +1163,10 @@
                                         </constraints>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleAspectFit" horizontalCompressionResistancePriority="400" translatesAutoresizingMaskIntoConstraints="NO" id="FoE-rf-3Sc">
-                                        <rect key="frame" x="0.0" y="355" width="306" height="50"/>
+                                        <rect key="frame" x="0.0" y="355" width="396" height="50"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="iconfb" translatesAutoresizingMaskIntoConstraints="NO" id="8K7-al-XFk">
-                                                <rect key="frame" x="0.0" y="0.0" width="306" height="50"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="396" height="50"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="50" id="oQv-fW-zyD"/>
                                                     <constraint firstAttribute="width" constant="50" id="t6U-gu-4E8"/>
@@ -1175,10 +1175,10 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="rLD-3R-JZr">
-                                        <rect key="frame" x="0.0" y="415" width="306" height="50"/>
+                                        <rect key="frame" x="0.0" y="415" width="396" height="50"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7mN-aN-9k7" customClass="FacebookButton" customModule="BestPrice" customModuleProvider="target">
-                                                <rect key="frame" x="24.5" y="0.0" width="257" height="50"/>
+                                                <rect key="frame" x="24.5" y="0.0" width="347" height="50"/>
                                                 <color key="backgroundColor" red="0.36415998319999998" green="0.47464216850000002" blue="0.60479709370000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="50" id="VaM-ea-RV0"/>
@@ -1407,7 +1407,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W2e-JF-mJN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1360.8695652173915" y="-579.24107142857144"/>
+            <point key="canvasLocation" x="1487" y="-291"/>
         </scene>
     </scenes>
     <resources>
@@ -1419,17 +1419,19 @@
         <image name="icons8-_takeaway_hot_drink" width="32" height="32"/>
         <image name="icons8-compact_camera" width="32" height="32"/>
         <image name="icons8-sneakers_2_2" width="32" height="32"/>
-        <image name="like25" width="50" height="50"/>
+        <image name="like25" width="25" height="25"/>
         <image name="likewhite" width="25" height="25"/>
-        <image name="menu25" width="48" height="48"/>
+        <image name="menu25" width="24" height="24"/>
         <image name="scanwhite" width="25" height="25"/>
-        <image name="search25" width="50" height="50"/>
+        <image name="search25" width="25" height="25"/>
         <image name="searchwhite" width="25" height="25"/>
         <image name="shop" width="32" height="32"/>
-        <image name="user" width="47.201023101806641" height="47.201023101806641"/>
+        <image name="user" width="512" height="512"/>
     </resources>
     <inferredMetricsTieBreakers>
+
         <segue reference="cnf-0A-Rpy"/>
+
         <segue reference="Bf8-1Y-UBm"/>
     </inferredMetricsTieBreakers>
 </document>
