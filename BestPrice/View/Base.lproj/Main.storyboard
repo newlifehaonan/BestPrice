@@ -172,10 +172,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P9D-mJ-3h6">
-                                <rect key="frame" x="20" y="44" width="64" height="30"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <rect key="frame" x="20" y="44" width="82" height="36"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                 <state key="normal" title="&lt; Return">
-                                    <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
                                     <segue destination="oxh-dN-ETv" kind="unwind" identifier="unwindToUPCInput" unwindAction="unwindToUPCInputWithSegue:" id="cKC-Cu-2wv"/>
@@ -184,13 +184,15 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="Rfm-Tv-sJw" firstAttribute="bottom" secondItem="P9D-mJ-3h6" secondAttribute="bottom" constant="788" id="1cY-WQ-ohS"/>
-                            <constraint firstItem="P9D-mJ-3h6" firstAttribute="top" secondItem="Rfm-Tv-sJw" secondAttribute="top" id="Nlp-lp-0W8"/>
-                            <constraint firstItem="Rfm-Tv-sJw" firstAttribute="trailing" secondItem="P9D-mJ-3h6" secondAttribute="trailing" constant="330" id="gM4-hJ-kL7"/>
-                            <constraint firstItem="P9D-mJ-3h6" firstAttribute="leading" secondItem="Rfm-Tv-sJw" secondAttribute="leading" constant="20" id="nKV-4r-kZE"/>
+                            <constraint firstItem="P9D-mJ-3h6" firstAttribute="top" secondItem="Rfm-Tv-sJw" secondAttribute="top" id="Dka-Xp-VpX"/>
+                            <constraint firstItem="Rfm-Tv-sJw" firstAttribute="trailing" relation="lessThanOrEqual" secondItem="P9D-mJ-3h6" secondAttribute="trailing" constant="312" id="Elw-wc-QFd"/>
+                            <constraint firstItem="P9D-mJ-3h6" firstAttribute="leading" secondItem="Rfm-Tv-sJw" secondAttribute="leading" constant="20" id="HTb-En-AX6"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Rfm-Tv-sJw"/>
                     </view>
+                    <connections>
+                        <outlet property="returnButton" destination="P9D-mJ-3h6" id="gap-1q-jpX"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zxo-0H-dH0" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="oxh-dN-ETv" userLabel="Exit" sceneMemberID="exit"/>

@@ -11,19 +11,50 @@ import AVFoundation
 
 class CameraScannerViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
     
+    @IBOutlet weak var returnButton: UIButton!
     var capSession: AVCaptureSession!
     var cameraLayer: AVCaptureVideoPreviewLayer?
-    var upceFrameView: UIView?
+    var upcFrameView: UIView?
     var scannedCode: String?
     
     override func viewDidLoad() {
         
         super.viewDidLoad()
         
-        // Set up the camera for video capture
-        let discoverySession = AVCaptureDevice.DiscoverySession(deviceTypes: [.builtInDualCamera], mediaType: AVMediaType.video, position: .back)
+        switch AVCaptureDevice.authorizationStatus(for: .video) {
+            
+        case .authorized: // The user has previously granted access to the camera.
+            print("Camera access granted")
+            self.setupCaptureSession()
+            
+        case .notDetermined: // The user has not yet been asked for camera access.
+            print("Camera access requested")
+            AVCaptureDevice.requestAccess(for: .video) { granted in
+                
+                if granted {
+                    
+                    self.setupCaptureSession()
+                }
+            }
+            
+        case .denied: // The user has previously denied access.
+            print("Camera access denied")
+            return
+            
+        case .restricted: // The user can't grant access due to restrictions.
+            print("Camera access restricted")
+            return
+        }
+
+        // "Spoof" passing of data while loading to device is unavailable
+        // Comment out line below to test
+        //scannedCode = "747930039853"
+    }
+    
+    func setupCaptureSession() {
         
-        guard let captureDevice = discoverySession.devices.first else {
+        // Set up the camera for video capture
+        guard let captureDevice = self.discoverCamera() else {
             
             print("Could not access the camera device specified")
             return
@@ -31,6 +62,7 @@ class CameraScannerViewController: UIViewController, AVCaptureMetadataOutputObje
         
         do {
             
+            capSession = AVCaptureSession()
             let input = try AVCaptureDeviceInput(device: captureDevice)
             
             // Set the input source for this capture session
@@ -41,7 +73,7 @@ class CameraScannerViewController: UIViewController, AVCaptureMetadataOutputObje
             capSession.addOutput(captureMetadataOutput)
             
             captureMetadataOutput.setMetadataObjectsDelegate(self, queue: DispatchQueue.main)
-            captureMetadataOutput.metadataObjectTypes = [AVMetadataObject.ObjectType.upce]
+            captureMetadataOutput.metadataObjectTypes = [.ean13, .ean8, .upce]
             
             // Set up the camera layer
             cameraLayer = AVCaptureVideoPreviewLayer(session: capSession)
@@ -51,15 +83,18 @@ class CameraScannerViewController: UIViewController, AVCaptureMetadataOutputObje
             
             capSession.startRunning()
             
-            // Initialize frame which will track scanned barcode
-            upceFrameView = UIView()
+            // Bring return button to the front
+            view.bringSubviewToFront(returnButton)
             
-            if let upceFrameView = upceFrameView {
+            // Initialize frame which will track scanned barcode
+            upcFrameView = UIView()
+            
+            if let upcFrame = upcFrameView {
                 
-                upceFrameView.layer.borderColor = UIColor.green.cgColor
-                upceFrameView.layer.borderWidth = 2
-                view.addSubview(upceFrameView)
-                view.bringSubviewToFront(upceFrameView)
+                upcFrame.layer.borderColor = UIColor.green.cgColor
+                upcFrame.layer.borderWidth = 2
+                view.addSubview(upcFrame)
+                view.bringSubviewToFront(upcFrame)
             }
             
         } catch {
@@ -67,11 +102,6 @@ class CameraScannerViewController: UIViewController, AVCaptureMetadataOutputObje
             print(error)
             return
         }
-
-
-        // "Spoof" passing of data while loading to device is unavailable
-        // Comment out line below to test
-        //scannedCode = "747930039853"
     }
     
     // MARK: Capture input from scanner
@@ -80,7 +110,7 @@ class CameraScannerViewController: UIViewController, AVCaptureMetadataOutputObje
         // Set up default value while barcode is not found
         if metadataObjects.count == 0 {
             
-            upceFrameView?.frame = CGRect.zero
+            upcFrameView?.frame = CGRect.zero
             scannedCode = ""
             return
         }
@@ -89,10 +119,10 @@ class CameraScannerViewController: UIViewController, AVCaptureMetadataOutputObje
         let metadata = metadataObjects[0] as! AVMetadataMachineReadableCodeObject
         
         // Ensure metadata is of UPC-e type and set appropriate object values
-        if metadata.type == AVMetadataObject.ObjectType.upce {
+        if output.metadataObjectTypes.contains(metadata.type) {
             
             let barCodeScanned = cameraLayer?.transformedMetadataObject(for: metadata)
-            upceFrameView?.frame = barCodeScanned!.bounds
+            upcFrameView?.frame = barCodeScanned!.bounds
             
             if metadata.stringValue != nil {
                 
@@ -109,8 +139,24 @@ class CameraScannerViewController: UIViewController, AVCaptureMetadataOutputObje
                 }
                 scanCompleteAlert.addAction(okayAction)
                 self.present(scanCompleteAlert, animated: true, completion: nil)
+                
+                capSession.stopRunning()
             }
         }
+    }
+    
+    // MARK: find applicable camera
+    func discoverCamera() -> AVCaptureDevice? {
+        
+        let deviceDiscovery = AVCaptureDevice.DiscoverySession(deviceTypes: [.builtInDualCamera,.builtInWideAngleCamera], mediaType: AVMediaType.video, position: .back)
+        
+        guard let cameraDevice = deviceDiscovery.devices.first  else {
+            
+            print("Failed to get the camera device")
+            return nil
+        }
+        
+            return cameraDevice
     }
 
     // MARK: Navigation - return to UPCInput
