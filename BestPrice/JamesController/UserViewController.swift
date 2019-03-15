@@ -10,6 +10,8 @@ import UIKit
 import Firebase
 import AVFoundation
 import AVKit
+import FBSDKCoreKit
+import FBSDKLoginKit
 
 class UserViewController: UIViewController {
         var player: AVPlayer?
@@ -20,17 +22,39 @@ class UserViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
     
-        self.navigationController?.isNavigationBarHidden = true
-     loginButton.layer.borderColor = UIColor.white.cgColor
-       registerButton.layer.borderColor = UIColor.white.cgColor
-loadVideo()
      
+        self.navigationController?.isNavigationBarHidden = true
+        loginButton.layer.borderColor = UIColor.white.cgColor
+        registerButton.layer.borderColor = UIColor.white.cgColor
+
+           print("printing")
+        guard let facebookToken = FBSDKAccessToken.current() else{
+            return
+        }
+        
+        let credential = FacebookAuthProvider.credential(withAccessToken: facebookToken.tokenString)
+        
+        Auth.auth().signInAndRetrieveData(with: credential, completion: {(authResult, error) in
+            if let error = error {
+                print(error.localizedDescription)
+                return
+            }
+            
+            self.performSegue(withIdentifier: "bypassLogin", sender: self)
+            
+        })
+      
+        
+        
 }
     
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
+        
           tabBarController?.tabBar.isHidden = true
+        
         loadVideo()
         // Hide the navigation bar on the this view controller
         self.navigationController?.setNavigationBarHidden(true, animated: animated)
