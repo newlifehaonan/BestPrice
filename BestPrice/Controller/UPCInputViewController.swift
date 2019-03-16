@@ -121,27 +121,43 @@ class UPCInputViewController: UIViewController, UITextFieldDelegate {
         }
     }
     
-    //updateMerchandize data
+    // MARK: Update the data to be passed to the results
     func updateMerchandizedata(json: JSON) {
+        
         if let returnvalue = json["items"].array {
+            
             let result = returnvalue[0].dictionary!
             good.name = result["title"]!.stringValue
             good.detail = result["description"]!.stringValue
             good.ImageURLs = good.convertJSON(jsonarray: result["images"]!.arrayValue)
             
             if let shopsDetail = result["offers"]?.array {
+                
                 for shop in shopsDetail {
+                    
                     let shopdetail = shop.dictionary!
-                    good.addShop(shop: Retailer(
-                        name: shopdetail["merchant"]!.stringValue,
-                        URL: shopdetail["link"]!.stringValue,
-                        price: shopdetail["price"]!.doubleValue))
+                    let itemCost = shopdetail["price"]!.doubleValue
+                    let shipCost = shopdetail["shipping"]!
+                    var costTotal = itemCost
+                    
+                    // Check for free shipping
+                    if shipCost != "Free Shipping" {
+                        costTotal = itemCost + shipCost.doubleValue
+                    }
+                    
+                    // Ignore "free items" (no longer listed on site or valid data not found)
+                    if costTotal != 0 {
+                        good.addShop(shop: Retailer(
+                            name: shopdetail["merchant"]!.stringValue,
+                            URL: shopdetail["link"]!.stringValue,
+                            price: costTotal))
+                    }
                 }
             }
-            
         }
     }
     
+    // MARK: Send the entered/scanned barcode to DB and parse result
     func sendUPCode(upc: String) {
         let params = ["upc": upc]
         getItem(url: UPC_URL, params: params) { (response, data, error) in
@@ -157,7 +173,7 @@ class UPCInputViewController: UIViewController, UITextFieldDelegate {
         }
     }
     
-    // Apply data from camera scanner on return
+    // MARK: Apply data from camera scanner on return
     @IBAction func unwindToUPCInput(segue: UIStoryboardSegue) {
         
         if let cameraViewController = segue.source as? CameraScannerViewController {
@@ -166,4 +182,3 @@ class UPCInputViewController: UIViewController, UITextFieldDelegate {
         }
     }
 }
-
