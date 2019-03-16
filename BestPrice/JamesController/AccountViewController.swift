@@ -18,7 +18,8 @@ class AccountViewController: UIViewController {
     @IBOutlet weak var aboutusText: UITextView!
     
     override func viewWillAppear(_ animated: Bool) {
-        
+        self.navigationController?.isNavigationBarHidden = true
+        self.tabBarController?.tabBar.isHidden = false
         if let providerData = Auth.auth().currentUser?.providerData {
             for userInfo in providerData {
                 switch userInfo.providerID {
@@ -38,6 +39,7 @@ class AccountViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.isNavigationBarHidden = true
+        self.tabBarController?.tabBar.isHidden = false
        
         if let providerData = Auth.auth().currentUser?.providerData {
             for userInfo in providerData {

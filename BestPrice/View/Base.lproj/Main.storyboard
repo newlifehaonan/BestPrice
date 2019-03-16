@@ -555,7 +555,24 @@
             </objects>
             <point key="canvasLocation" x="1013" y="2087"/>
         </scene>
-        <!--Account View Controller-->
+        <!--more-->
+        <scene sceneID="tHF-4g-COI">
+            <objects>
+                <navigationController id="VBZ-Aj-QVu" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="more" image="menu25" id="OQO-6D-84V"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="YFc-IH-GL3">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="NfF-3d-Obk" kind="relationship" relationship="rootViewController" id="YW5-K9-ILQ"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XxF-qj-gQc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-525" y="-291"/>
+        </scene>
+        <!--more-->
         <scene sceneID="r7K-BG-McR">
             <objects>
                 <viewController id="NfF-3d-Obk" customClass="AccountViewController" customModule="BestPrice" customModuleProvider="target" sceneMemberID="viewController">
@@ -660,12 +677,13 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="2dW-oN-VYa"/>
                     </view>
+                    <tabBarItem key="tabBarItem" title="more" image="menu25" id="Ld7-Fb-sFF"/>
                     <navigationItem key="navigationItem" id="U9n-QW-k2c"/>
                     <connections>
                         <outlet property="aboutusText" destination="a3N-2X-CXy" id="GnN-1D-Mib"/>
                         <outlet property="fbprofileimg" destination="Xr4-u6-zsn" id="lVz-wX-6Pq"/>
                         <outlet property="nameText" destination="g5I-Xm-8k8" id="lI8-yz-cfP"/>
-                        <segue destination="7Jt-ez-YGe" kind="show" identifier="goUser" id="Z85-mo-5HE"/>
+                        <segue destination="7Jt-ez-YGe" kind="show" identifier="goUser" animates="NO" id="Z85-mo-5HE"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DRC-B7-JOA" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -686,17 +704,18 @@
                         </textAttributes>
                     </navigationBar>
                     <connections>
-                        <segue destination="NfF-3d-Obk" kind="relationship" relationship="rootViewController" id="eA4-hg-4od"/>
+                        <segue destination="SQu-tY-ivN" kind="relationship" relationship="rootViewController" id="YV0-Li-gxD"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4iv-KO-IlP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-462" y="-291"/>
+            <point key="canvasLocation" x="-2687" y="-291"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="rgw-Og-36v">
             <objects>
                 <tabBarController id="SQu-tY-ivN" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="PHE-DA-WaU"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="a3S-pT-BOK">
                         <rect key="frame" x="0.0" y="3" width="414" height="0.0"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -706,7 +725,7 @@
                     <connections>
                         <segue destination="SM2-or-2v7" kind="relationship" relationship="viewControllers" id="zo4-dt-kgh"/>
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="qsp-Td-ZaO"/>
-                        <segue destination="SpU-UQ-Dqv" kind="relationship" relationship="viewControllers" id="MmS-Nm-wmG"/>
+                        <segue destination="VBZ-Aj-QVu" kind="relationship" relationship="viewControllers" id="Yap-T7-Vpg"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OKg-Oo-teq" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -864,7 +883,7 @@
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BestPriceLogo" translatesAutoresizingMaskIntoConstraints="NO" id="ZpY-D0-RSu">
-                                <rect key="frame" x="10" y="148" width="394" height="202"/>
+                                <rect key="frame" x="10" y="104" width="394" height="202"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="394" id="EgF-CG-usD"/>
                                     <constraint firstAttribute="height" constant="202" id="xhc-2P-go8"/>
@@ -886,16 +905,17 @@
                         <viewLayoutGuide key="safeArea" id="o8u-cg-x5X"/>
                     </view>
                     <navigationItem key="navigationItem" id="zBm-ZU-DuX"/>
+                    <nil key="simulatedTopBarMetrics"/>
                     <connections>
                         <outlet property="loginButton" destination="3jn-MY-2EW" id="fpg-Wf-wIU"/>
                         <outlet property="registerButton" destination="rX7-Iu-kUD" id="c6J-V2-ju2"/>
-                        <segue destination="SQu-tY-ivN" kind="show" identifier="toTabController" id="htY-Fa-DmJ"/>
-                        <segue destination="SQu-tY-ivN" kind="show" identifier="bypassLogin" id="tBx-0q-IUY"/>
+                        <segue destination="SpU-UQ-Dqv" kind="show" identifier="toTabController" animates="NO" id="34p-YH-lOf"/>
+                        <segue destination="SpU-UQ-Dqv" kind="show" identifier="bypassLogin" id="oLa-pa-WUp"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="R0N-tA-bTY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-4404.347826086957" y="-291.29464285714283"/>
+            <point key="canvasLocation" x="-5671" y="-291"/>
         </scene>
         <!--Register-->
         <scene sceneID="h5I-DZ-EAJ">
@@ -906,7 +926,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="EFf-dX-cnH">
-                                <rect key="frame" x="8" y="128" width="306" height="465"/>
+                                <rect key="frame" x="8" y="84" width="306" height="465"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="kDX-oi-0qb">
                                         <rect key="frame" x="0.0" y="0.0" width="306" height="165"/>
@@ -982,6 +1002,7 @@
                                                 </userDefinedRuntimeAttributes>
                                                 <connections>
                                                     <action selector="registerUsingEmail:" destination="tmW-UB-Nqi" eventType="touchUpInside" id="SmV-RB-ctK"/>
+                                                    <segue destination="SpU-UQ-Dqv" kind="show" identifier="goIn" id="KOJ-r6-oW2"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -1058,12 +1079,11 @@
                         <outlet property="passwordTextField" destination="D7r-Pd-brV" id="zQo-64-Ye1"/>
                         <outlet property="registerButton" destination="Ara-yS-ASf" id="ere-l4-j5U"/>
                         <outlet property="usernameTextField" destination="fhG-v0-Ksy" id="1fC-IW-LA2"/>
-                        <segue destination="SQu-tY-ivN" kind="show" identifier="goIn" id="toR-Eh-noI"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MeV-gn-XZU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3200" y="-11"/>
+            <point key="canvasLocation" x="-4293" y="180"/>
         </scene>
         <!--Login-->
         <scene sceneID="zFV-S7-00F">
@@ -1074,13 +1094,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="lkR-ER-hnO">
-                                <rect key="frame" x="9" y="138" width="396" height="465"/>
+                                <rect key="frame" x="9" y="94" width="306" height="465"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="pmm-Qm-dgb">
-                                        <rect key="frame" x="0.0" y="0.0" width="396" height="165"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="306" height="165"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BestPriceLogo" translatesAutoresizingMaskIntoConstraints="NO" id="bNz-yA-BNt">
-                                                <rect key="frame" x="0.0" y="0.0" width="396" height="165"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="306" height="165"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" relation="lessThanOrEqual" constant="306" id="1iM-Sj-P8S"/>
                                                     <constraint firstAttribute="height" constant="165" id="kgp-3y-I5s"/>
@@ -1096,10 +1116,10 @@
                                         </constraints>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="ahI-Aj-z91">
-                                        <rect key="frame" x="0.0" y="175" width="396" height="50"/>
+                                        <rect key="frame" x="0.0" y="175" width="306" height="50"/>
                                         <subviews>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="email" textAlignment="center" minimumFontSize="21" translatesAutoresizingMaskIntoConstraints="NO" id="GT1-TT-YmF">
-                                                <rect key="frame" x="0.0" y="0.0" width="396" height="50"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="306" height="50"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="50" id="2rT-I3-QUz"/>
@@ -1114,10 +1134,10 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="p7i-Ff-JgK">
-                                        <rect key="frame" x="0.0" y="235" width="396" height="50"/>
+                                        <rect key="frame" x="0.0" y="235" width="306" height="50"/>
                                         <subviews>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="password" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2Nn-vL-MWj">
-                                                <rect key="frame" x="0.0" y="0.0" width="396" height="50"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="306" height="50"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="50" id="FIP-l8-G7f"/>
@@ -1129,10 +1149,10 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="b5D-9U-0Wa">
-                                        <rect key="frame" x="0.0" y="295" width="396" height="50"/>
+                                        <rect key="frame" x="0.0" y="295" width="306" height="50"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nkv-Gy-YUJ">
-                                                <rect key="frame" x="24.5" y="0.0" width="347" height="50"/>
+                                                <rect key="frame" x="24.5" y="0.0" width="257" height="50"/>
                                                 <color key="backgroundColor" red="0.2462306494" green="0.60479709370000001" blue="0.35173650099999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="50" id="UU0-eY-9nq"/>
@@ -1155,6 +1175,7 @@
                                                 </userDefinedRuntimeAttributes>
                                                 <connections>
                                                     <action selector="loginWithEmail:" destination="4As-Z0-Vn5" eventType="touchUpInside" id="Opx-Ji-vwk"/>
+                                                    <segue destination="SpU-UQ-Dqv" kind="show" identifier="loggedIn" id="vjz-HL-O0H"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -1163,10 +1184,10 @@
                                         </constraints>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleAspectFit" horizontalCompressionResistancePriority="400" translatesAutoresizingMaskIntoConstraints="NO" id="FoE-rf-3Sc">
-                                        <rect key="frame" x="0.0" y="355" width="396" height="50"/>
+                                        <rect key="frame" x="0.0" y="355" width="306" height="50"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="iconfb" translatesAutoresizingMaskIntoConstraints="NO" id="8K7-al-XFk">
-                                                <rect key="frame" x="0.0" y="0.0" width="396" height="50"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="306" height="50"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="50" id="oQv-fW-zyD"/>
                                                     <constraint firstAttribute="width" constant="50" id="t6U-gu-4E8"/>
@@ -1175,10 +1196,10 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="rLD-3R-JZr">
-                                        <rect key="frame" x="0.0" y="415" width="396" height="50"/>
+                                        <rect key="frame" x="0.0" y="415" width="306" height="50"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7mN-aN-9k7" customClass="FacebookButton" customModule="BestPrice" customModuleProvider="target">
-                                                <rect key="frame" x="24.5" y="0.0" width="347" height="50"/>
+                                                <rect key="frame" x="24.5" y="0.0" width="257" height="50"/>
                                                 <color key="backgroundColor" red="0.36415998319999998" green="0.47464216850000002" blue="0.60479709370000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="50" id="VaM-ea-RV0"/>
@@ -1231,12 +1252,11 @@
                         <outlet property="facebookButton" destination="7mN-aN-9k7" id="aBc-0g-hhu"/>
                         <outlet property="loginButton" destination="nkv-Gy-YUJ" id="7NK-No-o2C"/>
                         <outlet property="passwordTextField" destination="2Nn-vL-MWj" id="Lf5-gS-fi4"/>
-                        <segue destination="SQu-tY-ivN" kind="show" identifier="loggedIn" id="cnf-0A-Rpy"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qSu-mO-sJ2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3200.0000000000005" y="-676.33928571428567"/>
+            <point key="canvasLocation" x="-4222" y="-669"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="vnG-F5-gHd">
@@ -1254,7 +1274,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hFZ-YG-0sc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-5364" y="-291"/>
+            <point key="canvasLocation" x="-6726" y="-291"/>
         </scene>
         <!--Alt Account View Controller-->
         <scene sceneID="wVR-OE-dlb">
@@ -1429,9 +1449,7 @@
         <image name="user" width="512" height="512"/>
     </resources>
     <inferredMetricsTieBreakers>
-
-        <segue reference="cnf-0A-Rpy"/>
-
+        <segue reference="oLa-pa-WUp"/>
         <segue reference="Bf8-1Y-UBm"/>
     </inferredMetricsTieBreakers>
 </document>
