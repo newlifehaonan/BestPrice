@@ -2,9 +2,6 @@
 //  UPCInputViewController.swift
 //  BestPrice
 //
-//  Created by Harry Chen and William Schroeder on 3/9/19.
-//  Copyright © 2019 Harry Chen. All rights reserved.
-//
 
 import UIKit
 import Alamofire
@@ -12,9 +9,8 @@ import SwiftyJSON
 import WBLoadingIndicatorView
 
 class UPCInputViewController: UIViewController, UITextFieldDelegate {
-
-    @IBOutlet weak var UPCInputField: UITextField!
     
+    @IBOutlet weak var UPCInputField: UITextField!
     @IBOutlet weak var searchByType: UIButton!
     
     let UPC_URL = "https://api.upcitemdb.com/prod/v1/lookup"
@@ -27,21 +23,22 @@ class UPCInputViewController: UIViewController, UITextFieldDelegate {
     var good = Merchandize()
     
     override func viewWillAppear(_ animated: Bool) {
-         self.tabBarController?.tabBar.isHidden = false
-         self.navigationController?.isNavigationBarHidden = false
+        self.tabBarController?.tabBar.isHidden = false
+        self.navigationController?.isNavigationBarHidden = false
     }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         UPCInputField.delegate = self
         self.navigationController?.isNavigationBarHidden = false
     }
+    
     override func viewDidDisappear(_ animated: Bool) {
         good = Merchandize()
     }
     
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool
-    {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return true
     }
@@ -54,21 +51,20 @@ class UPCInputViewController: UIViewController, UITextFieldDelegate {
         }
     }
     
-    // MARK: RESTFUL Call
+    // RESTFUL Call
     @IBAction func FetchingData(_ sender: Any) {
         if let code = UPCInputField.text {
             sendUPCode(upc: code)
-        }
-        else {
+        } else {
             print("Error invalid input)")
         }
     }
     
-    // MARK: - NetWorking
-    func getItem(url: String, params:[String: String], completion: @escaping (Bool, JSON?, Error?) -> Void){
+    //  NetWorking
+    func getItem(url: String, params: [String: String], completion: @escaping (Bool, JSON?, Error?) -> Void) {
         print("now getting data from server!")
         
-        // MARK: Using WBLoadingView
+        // Using WBLoadingView
         let indicator = WBLoadingIndicatorView(view: self.view)!
         indicator.type = WBLoadingAnimationType.animationBallSurround
         indicator.indicatorSize = CGSize(width: 50, height: 50)
@@ -89,7 +85,7 @@ class UPCInputViewController: UIViewController, UITextFieldDelegate {
                 switch response.result {
                 case .success:
                     print("Success! Got the item data")
-                    let ItemJSON: JSON  = JSON(response.result.value!)
+                    let ItemJSON: JSON = JSON(response.result.value!)
                     print(ItemJSON)
                     DispatchQueue.main.async() {
                         print("start parsing data from JSON to my local variable")
@@ -99,18 +95,16 @@ class UPCInputViewController: UIViewController, UITextFieldDelegate {
                             alert.addAction(UIAlertAction(title: "Dismiss", style: .default))
                             self.present(alert, animated: true, completion: nil)
                             indicator.wb_hideLoadingView(true)
-                        }
-                        else {
+                        } else {
                             if ItemJSON["items"].count == 0 {
                                 let alert = UIAlertController(title: "Sorry", message: "No Item Available", preferredStyle: .alert)
                                 alert.addAction(UIAlertAction(title: "Dismiss", style: .default))
                                 self.present(alert, animated: true, completion: nil)
                                 indicator.wb_hideLoadingView(true)
-                            }
-                            else {
+                            } else {
                                 completion(true, ItemJSON, nil)
                                 indicator.wb_hideLoadingView(true)
-                                self.performSegue(withIdentifier: "Getmerchandizelist", sender:self.searchByType)
+                                self.performSegue(withIdentifier: "Getmerchandizelist", sender: self.searchByType)
                             }
                         }
                     }
@@ -120,22 +114,22 @@ class UPCInputViewController: UIViewController, UITextFieldDelegate {
                         completion(false, nil, response.result.error)
                         //MARK: stop the animation here.
                         indicator.wb_hideLoadingView(true)
-                        self.performSegue(withIdentifier: "Getmerchandizelist", sender:self.searchByType)
+                        self.performSegue(withIdentifier: "Getmerchandizelist", sender: self.searchByType)
                     }
                 }
             }
         }
     }
     
-    //MARK: updateMerchandize data
-    func updateMerchandizedata(json: JSON){
+    //updateMerchandize data
+    func updateMerchandizedata(json: JSON) {
         if let returnvalue = json["items"].array {
             let result = returnvalue[0].dictionary!
             good.name = result["title"]!.stringValue
             good.detail = result["description"]!.stringValue
             good.ImageURLs = good.convertJSON(jsonarray: result["images"]!.arrayValue)
             
-            if let shopsDetail = result["offers"]?.array{
+            if let shopsDetail = result["offers"]?.array {
                 for shop in shopsDetail {
                     let shopdetail = shop.dictionary!
                     good.addShop(shop: Retailer(
@@ -152,17 +146,18 @@ class UPCInputViewController: UIViewController, UITextFieldDelegate {
         let params = ["upc": upc]
         getItem(url: UPC_URL, params: params) { (response, data, error) in
             if response {
-                guard let merchandizeData = data else {return}
+                guard let merchandizeData = data else {
+                    return
+                }
                 self.updateMerchandizedata(json: merchandizeData)
                 print("now my data is in the local variable!")
-            }
-            else if let error = error {
+            } else if let error = error {
                 print("Error \(error)")
             }
         }
     }
-
-    // MARK: Navigation - Apply data from camera scanner on return
+    
+    // Apply data from camera scanner on return
     @IBAction func unwindToUPCInput(segue: UIStoryboardSegue) {
         
         if let cameraViewController = segue.source as? CameraScannerViewController {
@@ -171,3 +166,4 @@ class UPCInputViewController: UIViewController, UITextFieldDelegate {
         }
     }
 }
+

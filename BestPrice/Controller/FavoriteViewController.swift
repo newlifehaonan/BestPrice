@@ -2,11 +2,11 @@ import UIKit
 import Firebase
 import WBLoadingIndicatorView
 
+//this class is used to display items in wishlist
 class FavoriteViewController: UIViewController {
     
     var items = [Merchandize]()
     var retailers = [Retailer]()
-    
     var faveName: String = ""
     var faveDetail: String = ""
     var faveImages: NSDictionary = [:]
@@ -15,14 +15,13 @@ class FavoriteViewController: UIViewController {
     var url: String = ""
     var retailerObj: Retailer?
     var imageArray = [String]()
-    
     var ref: DatabaseReference!
     var databaseHandle: DatabaseHandle?
     
-//    var userFavoriteItems = [Merchandize]()
-    
+
     @IBOutlet weak var favoriteList: UITableView!
     
+    //clear arrays and reset before database retrival begins again
     override func viewWillAppear(_ animated: Bool) {
         self.items = [Merchandize]()
         self.retailers = [Retailer]()
@@ -34,23 +33,27 @@ class FavoriteViewController: UIViewController {
         self.url = ""
         self.retailerObj = nil
         
+        
         getFavorite()
+        
+        //retrieve wishlist items from firebase databasse
         favoriteList.reloadData()
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //create a reference to database
         ref = Database.database().reference()
-//        getFavorite()
-//        favoriteList.reloadData()
+        
+        //hide tab bar controller
         self.tabBarController?.tabBar.isHidden = false
         
-        // Do any additional setup after loading the view.
         favoriteList.dataSource = self
         favoriteList.delegate = self
     }
     
-    //MARK: this function handle the http call
+    //This function handle the http call
     func getData(completion: @escaping (Bool?, NSEnumerator?) -> ()) {
         // MARK: Using WBLoadingView
         let indicator = WBLoadingIndicatorView(view: self.view)!
@@ -87,7 +90,7 @@ class FavoriteViewController: UIViewController {
         
     }
     
-    //MARK: load local variable
+    //This is main function in controller, which retrieves data from database and save into global variables and create retailer and item objects to populate table view
     func loadFavorite(favariteSnapShots: NSEnumerator) {
         for favorite in favariteSnapShots {
             let snap = favorite as! DataSnapshot
@@ -120,23 +123,24 @@ class FavoriteViewController: UIViewController {
             }
             self.items.append(Merchandize(name: self.faveName, detail: self.faveDetail, images: self.imageArray, shops: self.retailers)
             )
-//            self.faveImages = [:]
+            //            self.faveImages = [:]
             self.imageArray = [String]()
             self.retailers = [Retailer]()
         }
     }
     
-    //MARK: final function of get favorite data from firebase
+    
     func getFavorite() {
         getData { (isSuccess, favoriteSnaps) in
             if isSuccess == true {
-                guard let data = favoriteSnaps else {return}
+                guard let data = favoriteSnaps else {
+                    return
+                }
                 self.loadFavorite(favariteSnapShots: data)
                 self.favoriteList.reloadData()
-                print("now my data is in my local variable")
-            }
-            else {
-                print("data is failed to return")
+                print("Now my data is in my local variable")
+            } else {
+                print("Data is failed to return")
             }
         }
     }
@@ -168,7 +172,7 @@ extension FavoriteViewController: UITableViewDataSource, UITableViewDelegate {
         let cell = tableView.dequeueReusableCell(withIdentifier: "favoriteItem", for: indexPath) as! FavoriteTableViewCell
         
         cell.itemName.text = items[indexPath.row].name
-        let orderedShops = items[indexPath.row].shops.sorted { (this:Retailer, that:Retailer) -> Bool in
+        let orderedShops = items[indexPath.row].shops.sorted { (this: Retailer, that: Retailer) -> Bool in
             this.price < that.price
         }
         cell.BestPrice.text = "Best Price: $\(orderedShops[0].price)"
@@ -176,3 +180,4 @@ extension FavoriteViewController: UITableViewDataSource, UITableViewDelegate {
         return cell
     }
 }
+

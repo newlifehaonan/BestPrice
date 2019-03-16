@@ -1,33 +1,35 @@
 //
 //  AccountViewController.swift
 //  BestPrice
-//
-//  Created by James Valles on 3/12/19.
-//  Copyright © 2019 Harry Chen. All rights reserved.
-//
 
 import UIKit
 import Firebase
 import FBSDKCoreKit
 import FBSDKLoginKit
 
-class AccountViewController: UIViewController {
+//This is the account view controller used for User Profile (if signed in with Facebook)
 
+class AccountViewController: UIViewController {
+    
     @IBOutlet weak var nameText: UILabel!
     @IBOutlet weak var fbprofileimg: UIImageView!
     @IBOutlet weak var aboutusText: UITextView!
     
     override func viewWillAppear(_ animated: Bool) {
+        
+        //Show hide navigation and tab bar controllers
         self.navigationController?.isNavigationBarHidden = true
         self.tabBarController?.tabBar.isHidden = false
+        
+        //if user logged in using email perform segue to User Profile version
         if let providerData = Auth.auth().currentUser?.providerData {
             for userInfo in providerData {
                 switch userInfo.providerID {
                 case "facebook.com":
-                 print("user is signed in with \(userInfo.providerID)")
-                   
+                    print("User is signed in with \(userInfo.providerID)")
+                    
                 default:
-                   
+                    
                     performSegue(withIdentifier: "goUser", sender: self)
                 }
             }
@@ -35,42 +37,38 @@ class AccountViewController: UIViewController {
         
         
     }
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.isNavigationBarHidden = true
         self.tabBarController?.tabBar.isHidden = false
-       
+        
         if let providerData = Auth.auth().currentUser?.providerData {
             for userInfo in providerData {
                 switch userInfo.providerID {
                 case "facebook.com":
-            print("facebook")
+                    print("facebook")
                     nameText.text = userInfo.displayName
-            downloadImage(url: (userInfo.photoURL?.absoluteString)!)
-           // fbprofileimg.layer.borderColor = [UIColor, blackColor].CGColor;
-            fbprofileimg.layer.borderWidth = 3;
-            fbprofileimg.layer.cornerRadius = fbprofileimg.frame.size.width / 2 // To get Rounded Corner
-            
-            fbprofileimg.clipsToBounds = true // To Trim Outer frame
-
-            let borderColor = UIColor(red:255, green:255, blue:255, alpha:1.0)
-            fbprofileimg.layer.borderColor = borderColor.cgColor
-                
+                    downloadImage(url: (userInfo.photoURL?.absoluteString)!)
+                    fbprofileimg.layer.borderWidth = 3;
+                    fbprofileimg.layer.cornerRadius = fbprofileimg.frame.size.width / 2 // To get Rounded Corner
+                    fbprofileimg.clipsToBounds = true // To Trim Outer frame
+                    let borderColor = UIColor(red: 255, green: 255, blue: 255, alpha: 1.0)
+                    fbprofileimg.layer.borderColor = borderColor.cgColor
+                    
                 default:
                     print("user is signed in with \(userInfo.providerID)")
-                 
+                    
                 }
             }
         }
     }
     
-
+    
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         aboutusText.setContentOffset(.zero, animated: false)
     }
-    
     
     
     func getData(url: URL, completion: @escaping (Data?, URLResponse?, Error?) -> ()) {
@@ -79,7 +77,7 @@ class AccountViewController: UIViewController {
     
     func downloadImage(url: String) {
         print("Image download starting.")
-    
+        
         DispatchQueue.global().asyncAfter(deadline: .now() + 0.5) {
             guard let Url = URL(string: url) else {
                 return
@@ -95,7 +93,7 @@ class AccountViewController: UIViewController {
                 } else {
                     DispatchQueue.main.async() {
                         print("Download Failed")
-                      
+                        
                     }
                 }
             }
@@ -109,8 +107,8 @@ class AccountViewController: UIViewController {
                 case "facebook.com":
                     
                     print("user is signed in with facebook")
-                     FBSDKLoginManager().logOut()
-                 let goHome = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "home") as? UserViewController
+                    FBSDKLoginManager().logOut()
+                    let goHome = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "home") as? UserViewController
                     self.addChild(goHome!)
                     goHome!.view.frame = self.view.frame
                     self.view.addSubview(goHome!.view)
@@ -123,12 +121,13 @@ class AccountViewController: UIViewController {
                         try firebaseAuth.signOut()
                         print("User Logged Out")
                     } catch let signOutError as NSError {
-                        print ("Error signing out: %@", signOutError)
+                        print("Error signing out: %@", signOutError)
                     }
                 }
             }
         }
     }
     
-
+    
 }
+

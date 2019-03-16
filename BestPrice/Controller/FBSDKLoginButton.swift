@@ -2,15 +2,16 @@
 //  FBSDKLoginButton.swift
 //  BestPrice
 //
-//  Created by James Valles on 3/11/19.
-//  Copyright © 2019 Harry Chen. All rights reserved.
-//
+
 
 import Foundation
 import FBSDKLoginKit
 
+//This is the class to override Facebook's login button constraints on registration, login scenes, so that I can use mine
+
 class FacebookButton: FBSDKLoginButton {
     var standardButtonHeight: Int = 30
+    
     override func updateConstraints() {
         // deactivate height constraints added by the facebook sdk (we'll force our own instrinsic height)
         for contraint in constraints {
@@ -45,3 +46,4 @@ class FacebookButton: FBSDKLoginButton {
     }
     
 }
+

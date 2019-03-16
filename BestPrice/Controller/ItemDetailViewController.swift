@@ -2,9 +2,7 @@
 //  ItemDetailViewController.swift
 //  BestPrice
 //
-//  Created by Harry Chen on 3/9/19.
-//  Copyright © 2019 Harry Chen. All rights reserved.
-//
+
 
 import UIKit
 
@@ -52,7 +50,7 @@ class ItemDetailViewController: UIViewController {
             self.blurView.effect = nil
         }) {
             (success: Bool) in
-                self.view.removeFromSuperview()
+            self.view.removeFromSuperview()
         }
     }
     
@@ -67,7 +65,7 @@ class ItemDetailViewController: UIViewController {
     
     
     // MARK: - Navigation
-
+    
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showWebView" {
@@ -76,6 +74,5 @@ class ItemDetailViewController: UIViewController {
             destinationVC.shopURL = self.shopURL
         }
     }
- 
-
 }
+

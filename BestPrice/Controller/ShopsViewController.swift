@@ -2,12 +2,12 @@
 //  ShopsViewController.swift
 //  BestPrice
 //
-//  Created by Harry Chen on 3/9/19.
-//  Copyright © 2019 Harry Chen. All rights reserved.
-//
+
 
 import UIKit
 import Firebase
+
+
 
 class ShopsViewController: UIViewController {
     @IBOutlet weak var ShopCardCollections: UICollectionView!
@@ -20,12 +20,12 @@ class ShopsViewController: UIViewController {
     var merchandize: Merchandize?
     var ref: DatabaseReference!
     var databaseHandle: DatabaseHandle?
-      
+    
     
     override func viewDidLoad() {
         
         super.viewDidLoad()
-
+        
         
         // create a reference of database connection for collection cell to use
         ref = Database.database().reference()
@@ -61,15 +61,14 @@ extension ShopsViewController: UICollectionViewDataSource, UICollectionViewDeleg
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if let shops = merchandize?.shops {
             return shops.count
-        }
-        else {
+        } else {
             return 0
         }
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Merchant", for: indexPath) as! ShopCardCollectionViewCell
-        //MARK: change Image
+        
         cell.AddToFavorite.setImage(UIImage(named: "likewhite"), for: .normal)
         cell.AddToFavorite.setImage(UIImage(named: "heartred"), for: .selected)
         
@@ -89,41 +88,18 @@ extension ShopsViewController: UICollectionViewDataSource, UICollectionViewDeleg
             cell.controller = self
             cell.popup = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ShopDetailPopUp") as? ItemDetailViewController
             
-//            cell.viewDetail.addTarget(self, action: #selector(self.triggleDetailPopUp), for: .touchUpInside)
-//            cell.AddToFavorite.addTarget(self, action: #selector(self.addWishlist), for: .touchUpInside)
-            
-            guard let numbOfImg = merchandize?.ImageURLs.count else { return cell}
+            guard let numbOfImg = merchandize?.ImageURLs.count else {
+                return cell
+            }
             let ramdomizedIndex = Int.random(in: 0..<numbOfImg)
-            guard let imgurl = merchandize?.ImageURLs[ramdomizedIndex] else { return cell}
+            guard let imgurl = merchandize?.ImageURLs[ramdomizedIndex] else {
+                return cell
+            }
             cell.downloadImg(url: imgurl)
             return cell
         }
         return cell
     }
-    
-// I don't really need those, but might be useful in the future.
-//    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-//        self.currentcellIndex = indexPath
-//    }
-    
-//    @objc func triggleDetailPopUp(sender: UIButton) {
-//        let popup = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ShopDetailPopUp") as! ItemDetailViewController
-//
-//        popup.detail = merchandize
-//        let shopname = merchandize!.shops[currentcellIndex!.row].name
-//        let itemprice = merchandize!.shops[currentcellIndex!.row].price
-//        popup.shopName.text = shopname
-//        popup.itemPrice.text = "$\(itemprice)"
-//
-//
-//        self.addChild(popup)
-//        popup.view.frame = self.view.frame
-//        self.view.addSubview(popup.view)
-//        popup.didMove(toParent: self)
-//    }
-//    @objc func addWishlist() {
-//        print("item added")
-//    }
 }
 
 extension ShopsViewController: UIScrollViewDelegate {
@@ -139,3 +115,4 @@ extension ShopsViewController: UIScrollViewDelegate {
         targetContentOffset.pointee = offset
     }
 }
+

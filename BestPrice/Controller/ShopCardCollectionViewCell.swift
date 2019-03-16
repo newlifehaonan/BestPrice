@@ -7,13 +7,9 @@ import Firebase
 class ShopCardCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var productImg: UIImageView!
-    
     @IBOutlet weak var ShopName: UILabel!
-    
     @IBOutlet weak var itemPrice: UILabel!
-    
     @IBOutlet weak var viewDetail: UIButton!
-    
     @IBOutlet weak var AddToFavorite: UIButton!
     
     var shopURL: String?
@@ -41,12 +37,6 @@ class ShopCardCollectionViewCell: UICollectionViewCell {
         
         // config buttom UI
         AddToFavorite.isSelected.toggle()
-//        if AddToFavorite.state == .selected {
-//            // added to wishlist in firebase
-//
-//        } else if AddToFavorite.state == .normal {
-//        }
-        
         let userid = Auth.auth().currentUser!.uid
         //MARK: create a tree structure of this user and insert the following data; set the rule as well
         let dataToStoreInDatabase = controller?.merchandize
@@ -116,3 +106,4 @@ class ShopCardCollectionViewCell: UICollectionViewCell {
         self.clipsToBounds = false
     }
 }
+

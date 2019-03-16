@@ -2,7 +2,6 @@
 //  AccountViewController.swift
 //  BestPrice
 //
-//  Created by James Valles on 3/12/19.
 
 
 import UIKit
@@ -10,17 +9,13 @@ import Firebase
 import FBSDKCoreKit
 import FBSDKLoginKit
 
+//This is the account view controller used for User Profile (if signed in with email)
 class AltAccountViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var altnameText1: UILabel!
     @IBOutlet weak var altfbprofileimg: UIImageView!
-    
     @IBOutlet weak var name: UITextField!
-    
     @IBOutlet weak var email: UITextField!
-    
-  
-    
     
     
     override func viewDidLoad() {
@@ -28,28 +23,25 @@ class AltAccountViewController: UIViewController, UITextFieldDelegate {
         self.navigationController?.isNavigationBarHidden = true
         self.tabBarController?.tabBar.isHidden = false
         name.delegate = self
-    
+        
         if let providerData = Auth.auth().currentUser?.providerData {
             for userInfo in providerData {
                 switch userInfo.providerID {
                 case "facebook.com":
                     print("facebook")
-           
                     
-                    // fbprofileimg.layer.borderColor = [UIColor, blackColor].CGColor;
+                    //create border and round profile image
                     altfbprofileimg.layer.borderWidth = 3;
                     altfbprofileimg.layer.cornerRadius = altfbprofileimg.frame.size.width / 2 // To get Rounded Corner
-                    
                     altfbprofileimg.clipsToBounds = true // To Trim Outer frame
-                    
-                    let borderColor = UIColor(red:255, green:255, blue:255, alpha:1.0)
+                    let borderColor = UIColor(red: 255, green: 255, blue: 255, alpha: 1.0)
                     altfbprofileimg.layer.borderColor = borderColor.cgColor
                     
                 default:
                     email.text = userInfo.email
                     name.text = userInfo.displayName
                     altnameText1.text = userInfo.displayName
-                  
+                    
                     
                     print("user is signed in with \(userInfo.providerID)")
                     
@@ -58,36 +50,35 @@ class AltAccountViewController: UIViewController, UITextFieldDelegate {
         }
     }
     
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool
-    {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return true
     }
     
     
-        @IBAction func updateInfo(_ sender: Any) {
-            let changeRequest = Auth.auth().currentUser?.createProfileChangeRequest()
-           changeRequest?.displayName = name.text!
-            changeRequest?.commitChanges { (error) in
+    @IBAction func updateInfo(_ sender: Any) {
+        let changeRequest = Auth.auth().currentUser?.createProfileChangeRequest()
+        changeRequest?.displayName = name.text!
+        changeRequest?.commitChanges { (error) in
+            
+            if error == nil {
+                self.altnameText1.text = changeRequest?.displayName
                 
-                if error == nil{
-                    self.altnameText1.text = changeRequest?.displayName
-                                
-                } else{
-                    
-                }
-                        }
-                    }
-                    
-    
-        override func viewWillAppear(_ animated: Bool) {
-            super.viewWillAppear(animated)
-    
-            // Hide the navigation bar on the this view controller
-            self.navigationController?.setNavigationBarHidden(true, animated: animated)
-            self.tabBarController?.tabBar.isHidden = false
+            } else {
+                
+            }
         }
-
+    }
+    
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        // Hide the navigation bar on the this view controller
+        self.navigationController?.setNavigationBarHidden(true, animated: animated)
+        self.tabBarController?.tabBar.isHidden = false
+    }
+    
     
     @IBAction func altlogoutButton(_ sender: Any) {
         if let providerData = Auth.auth().currentUser?.providerData {
@@ -117,7 +108,7 @@ class AltAccountViewController: UIViewController, UITextFieldDelegate {
                         try firebaseAuth.signOut()
                         print("User Logged Out")
                     } catch let signOutError as NSError {
-                        print ("Error signing out: %@", signOutError)
+                        print("Error signing out: %@", signOutError)
                     }
                 }
             }
@@ -126,4 +117,5 @@ class AltAccountViewController: UIViewController, UITextFieldDelegate {
     
     
 }
+
 
