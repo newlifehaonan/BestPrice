@@ -31,7 +31,7 @@ class ShopCardCollectionViewCell: UICollectionViewCell {
         popup!.didMove(toParent: caller)
     }
     
-    
+    //This function stores selected favorite item in the firebase database in JSON tree format 
     @IBAction func addToFavorite(_ sender: Any) {
         
         
