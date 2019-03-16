@@ -1,10 +1,7 @@
 //
 //  CameraScannerViewController.swift
 //  BestPrice
-//
-//  Created by William Schroeder on 3/14/19.
-//  Copyright © 2019 Harry Chen. All rights reserved.
-//
+
 
 import UIKit
 import AVFoundation
@@ -45,7 +42,7 @@ class CameraScannerViewController: UIViewController, AVCaptureMetadataOutputObje
             print("Camera access restricted")
             return
         }
-
+        
         // "Spoof" passing of data while loading to device is unavailable
         // Comment out line below to test
         //scannedCode = "747930039853"
@@ -148,17 +145,17 @@ class CameraScannerViewController: UIViewController, AVCaptureMetadataOutputObje
     // MARK: find applicable camera
     func discoverCamera() -> AVCaptureDevice? {
         
-        let deviceDiscovery = AVCaptureDevice.DiscoverySession(deviceTypes: [.builtInDualCamera,.builtInWideAngleCamera], mediaType: AVMediaType.video, position: .back)
+        let deviceDiscovery = AVCaptureDevice.DiscoverySession(deviceTypes: [.builtInDualCamera, .builtInWideAngleCamera], mediaType: AVMediaType.video, position: .back)
         
-        guard let cameraDevice = deviceDiscovery.devices.first  else {
+        guard let cameraDevice = deviceDiscovery.devices.first else {
             
             print("Failed to get the camera device")
             return nil
         }
         
-            return cameraDevice
+        return cameraDevice
     }
-
+    
     // MARK: Navigation - return to UPCInput
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
@@ -167,5 +164,6 @@ class CameraScannerViewController: UIViewController, AVCaptureMetadataOutputObje
             scannedCode = ""
         }
     }
-
+    
 }
+

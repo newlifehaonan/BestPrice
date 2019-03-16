@@ -124,8 +124,6 @@
 		A26D379D223304A70028A6FF /* BestPrice */ = {
 			isa = PBXGroup;
 			children = (
-				BE33AA75223ADE4B00BA8C2B /* WillController */,
-				A2FB405A2236E99B006E5746 /* JamesController */,
 				A2AD81EB2233219300C340EC /* Controller */,
 				A2AD81EA2233217900C340EC /* View */,
 				A2AD81E92233216B00C340EC /* Model */,
@@ -162,6 +160,13 @@
 		A2AD81EB2233219300C340EC /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				BE33AA76223ADF3C00BA8C2B /* CameraScannerViewController.swift */,
+				AB1623CF223814B400FF4CE6 /* AccountViewController.swift */,
+				A2FB405E2236EA4A006E5746 /* FBSDKLoginButton.swift */,
+				A2FB40612236EA4A006E5746 /* InAppViewController.swift */,
+				A2FB405F2236EA4A006E5746 /* LoginViewController.swift */,
+				A2FB405D2236EA4A006E5746 /* RegisterViewController.swift */,
+				A2FB40602236EA4A006E5746 /* UserViewController.swift */,
 				AB572407223C0E54002365CF /* AltAccountViewController.swift */,
 				A26D37A0223304A70028A6FF /* FavoriteViewController.swift */,
 				A2AD81F02234449300C340EC /* ShopsViewController.swift */,
@@ -173,27 +178,6 @@
 				A20418BD223B207F003C401E /* FavoriteTableViewCell.swift */,
 			);
 			path = Controller;
-			sourceTree = "<group>";
-		};
-		A2FB405A2236E99B006E5746 /* JamesController */ = {
-			isa = PBXGroup;
-			children = (
-				AB1623CF223814B400FF4CE6 /* AccountViewController.swift */,
-				A2FB405E2236EA4A006E5746 /* FBSDKLoginButton.swift */,
-				A2FB40612236EA4A006E5746 /* InAppViewController.swift */,
-				A2FB405F2236EA4A006E5746 /* LoginViewController.swift */,
-				A2FB405D2236EA4A006E5746 /* RegisterViewController.swift */,
-				A2FB40602236EA4A006E5746 /* UserViewController.swift */,
-			);
-			path = JamesController;
-			sourceTree = "<group>";
-		};
-		BE33AA75223ADE4B00BA8C2B /* WillController */ = {
-			isa = PBXGroup;
-			children = (
-				BE33AA76223ADF3C00BA8C2B /* CameraScannerViewController.swift */,
-			);
-			path = WillController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

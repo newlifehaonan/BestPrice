@@ -2,16 +2,15 @@
 //  InAppViewController.swift
 //  BestPrice
 //
-//  Created by James Valles on 3/9/19.
-//  Copyright © 2019 Harry Chen. All rights reserved.
-//
 
 import UIKit
 import Firebase
 import FBSDKLoginKit
 
-class InAppViewController: UIViewController, FBSDKLoginButtonDelegate {
+//This class was used for testing purposes
 
+class InAppViewController: UIViewController, FBSDKLoginButtonDelegate {
+    
     @IBOutlet weak var facebookButton: FBSDKLoginButton!
     
     override func viewDidLoad() {
@@ -20,13 +19,13 @@ class InAppViewController: UIViewController, FBSDKLoginButtonDelegate {
         facebookButton.delegate = self
         facebookButton.readPermissions = ["email"]
         self.navigationController?.isNavigationBarHidden = true
-
+        
         // Do any additional setup after loading the view.
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-    
+        
         // Hide the navigation bar on the this view controller
         self.navigationController?.setNavigationBarHidden(true, animated: animated)
     }
@@ -36,21 +35,21 @@ class InAppViewController: UIViewController, FBSDKLoginButtonDelegate {
         do {
             try firebaseAuth.signOut()
             guard (navigationController?.popToRootViewController(animated: true)) != nil
-                else{
+                else {
                     print("No View Controllers to pop off")
                     return
             }
         } catch let signOutError as NSError {
-            print ("Error signing out: %@", signOutError)
+            print("Error signing out: %@", signOutError)
         }
         
     }
     
     func loginButton(_ loginButton: FBSDKLoginButton!, didCompleteWith result: FBSDKLoginManagerLoginResult!, error: Error!) {
-        if error == nil{
+        if error == nil {
             let credential = FacebookAuthProvider.credential(withAccessToken: FBSDKAccessToken.current().tokenString)
             
-            Auth.auth().signInAndRetrieveData(with: credential, completion: {(authResult, error) in
+            Auth.auth().signInAndRetrieveData(with: credential, completion: { (authResult, error) in
                 if let error = error {
                     print(error.localizedDescription)
                     return
@@ -62,18 +61,20 @@ class InAppViewController: UIViewController, FBSDKLoginButtonDelegate {
         }
         
     }
+    
     @IBAction func logoutwithfacebook(_ sender: Any) {
         loginButtonDidLogOut(facebookButton)
     }
-
+    
     func loginButtonDidLogOut(_ loginButton: FBSDKLoginButton!) {
-       // self.performSegue(withIdentifier: "backHome", sender: self)
+        // self.performSegue(withIdentifier: "backHome", sender: self)
         
         guard (navigationController?.popToRootViewController(animated: true)) != nil
-            else{
+            else {
                 print("No View Controllers to pop off")
                 return
         }
     }
-
+    
 }
+

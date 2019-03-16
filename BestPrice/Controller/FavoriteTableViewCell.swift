@@ -2,25 +2,25 @@
 //  FavoriteTableViewCell.swift
 //  BestPrice
 //
-//  Created by Harry Chen on 3/14/19.
-//  Copyright © 2019 Harry Chen. All rights reserved.
-//
+
 
 import UIKit
 
+//using objects created  from favorite view controller to populate table view cells 
 class FavoriteTableViewCell: UITableViewCell {
-
+    
     @IBOutlet weak var itemImage: UIImageView!
     @IBOutlet weak var itemName: UILabel!
     @IBOutlet weak var BestPrice: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
-
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
+        
         // Configure the view for the selected state
     }
     
@@ -38,7 +38,7 @@ class FavoriteTableViewCell: UITableViewCell {
         indicator.center = self.itemImage.center
         indicator.sizeToFit()
         indicator.startAnimating()
-        DispatchQueue.global().asyncAfter(deadline: .now() + 0.5) {
+        DispatchQueue.global().asyncAfter(deadline: .now() + 0.0) {
             guard let Url = URL(string: url) else {
                 return
             }
@@ -59,5 +59,6 @@ class FavoriteTableViewCell: UITableViewCell {
             }
         }
     }
-
+    
 }
+
