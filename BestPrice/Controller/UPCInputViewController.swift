@@ -28,13 +28,13 @@ class UPCInputViewController: UIViewController, UITextFieldDelegate {
     
     override func viewWillAppear(_ animated: Bool) {
          self.tabBarController?.tabBar.isHidden = false
-         self.navigationController?.isNavigationBarHidden = true
+         self.navigationController?.isNavigationBarHidden = false
     }
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         UPCInputField.delegate = self
-        self.navigationController?.isNavigationBarHidden = true
+        self.navigationController?.isNavigationBarHidden = false
     }
     override func viewDidDisappear(_ animated: Bool) {
         good = Merchandize()

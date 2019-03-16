@@ -22,9 +22,11 @@ class AltAccountViewController: UIViewController, UITextFieldDelegate {
   
     
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.isNavigationBarHidden = true
+        self.tabBarController?.tabBar.isHidden = false
         name.delegate = self
     
         if let providerData = Auth.auth().currentUser?.providerData {
@@ -83,6 +85,7 @@ class AltAccountViewController: UIViewController, UITextFieldDelegate {
     
             // Hide the navigation bar on the this view controller
             self.navigationController?.setNavigationBarHidden(true, animated: animated)
+            self.tabBarController?.tabBar.isHidden = false
         }
 
     
