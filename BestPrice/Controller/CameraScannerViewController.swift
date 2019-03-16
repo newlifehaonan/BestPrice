@@ -14,6 +14,7 @@ class CameraScannerViewController: UIViewController, AVCaptureMetadataOutputObje
     var upcFrameView: UIView?
     var scannedCode: String?
     
+    // MARK: viewDidLoad
     override func viewDidLoad() {
         
         super.viewDidLoad()
@@ -48,6 +49,7 @@ class CameraScannerViewController: UIViewController, AVCaptureMetadataOutputObje
         //scannedCode = "747930039853"
     }
     
+    // MARK: Prepare and display the camera
     func setupCaptureSession() {
         
         // Set up the camera for video capture
@@ -142,7 +144,7 @@ class CameraScannerViewController: UIViewController, AVCaptureMetadataOutputObje
         }
     }
     
-    // MARK: find applicable camera
+    // MARK: Find bets camera supported by device
     func discoverCamera() -> AVCaptureDevice? {
         
         let deviceDiscovery = AVCaptureDevice.DiscoverySession(deviceTypes: [.builtInDualCamera, .builtInWideAngleCamera], mediaType: AVMediaType.video, position: .back)
