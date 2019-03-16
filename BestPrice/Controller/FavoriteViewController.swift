@@ -26,6 +26,14 @@ class FavoriteViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         self.items = [Merchandize]()
         self.retailers = [Retailer]()
+        self.imageArray = [String]()
+        self.faveName = ""
+        self.faveDetail = ""
+        self.faveImages = [:]
+        self.price = ""
+        self.url = ""
+        self.retailerObj = nil
+        
         getFavorite()
         favoriteList.reloadData()
     }
@@ -88,7 +96,11 @@ class FavoriteViewController: UIViewController {
             self.faveName = dict["name"] as! String
             self.faveDetail = dict["detail"] as! String
             self.faveImages = dict["images"] as! NSDictionary
-            
+            for value in self.faveImages.allValues {
+                if let newImgVal = value as? String {
+                    self.imageArray.append(newImgVal)
+                }
+            }
             let shops = dict["shops"] as! NSDictionary
             for shop in shops {
                 let dict = shop.value as! [String: Any]
@@ -105,15 +117,12 @@ class FavoriteViewController: UIViewController {
                 } else {
                     
                 }
-                
-                for value in self.faveImages.allValues {
-                    if let newImgVal = value as? String {
-                        self.imageArray.append(newImgVal)
-                    }
-                }
             }
             self.items.append(Merchandize(name: self.faveName, detail: self.faveDetail, images: self.imageArray, shops: self.retailers)
             )
+//            self.faveImages = [:]
+            self.imageArray = [String]()
+            self.retailers = [Retailer]()
         }
     }
     
@@ -141,7 +150,6 @@ class FavoriteViewController: UIViewController {
                     destinationVC.merchandize = items[indexpath.row]
                 }
             }
-            
         }
     }
 }
